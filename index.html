@@ -38,10 +38,10 @@
             <span class="bg-[#C5ADC5] text-slate-900 text-xs px-2.5 py-0.5 rounded-full font-bold mr-2">Advisory Open</span> 
             Direct WhatsApp Support: <a href="https://wa.me/918171820009" target="_blank" class="underline font-bold hover:text-[#C5ADC5]">+91 81718 20009</a> (Mon–Sat: 9:30 AM to 7:00 PM IST)
         </div>
-        <div class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5">
-            <i class="fa-solid fa-volume-high animate-pulse"></i>
-            <span>Sound: Active (Permanent)</span>
-        </div>
+        <button id="soundToggleBtn" onclick="toggleSound(event)" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400" title="Click to mute/unmute audio effects" aria-label="Toggle Sound Effects">
+            <i id="soundIcon" class="fa-solid fa-volume-high animate-pulse"></i>
+            <span id="soundStatusText">Sound: Active</span>
+        </button>
     </div>
 
     <!-- Navigation Bar -->
@@ -69,7 +69,7 @@
 
             <!-- CTA Actions -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 text-sm font-bold px-5 py-2.5 rounded-xl shadow-sm transition flex items-center space-x-2">
+                <a href="https://wa.me/918171820009" target="_blank" onclick="playSound('cta')" class="bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 text-sm font-bold px-5 py-2.5 rounded-xl shadow-sm transition flex items-center space-x-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
                     <span>WhatsApp Connect</span>
                 </a>
@@ -89,7 +89,7 @@
             <a href="#testimonials" onclick="playSound()" class="block hover:text-darknavy">Testimonials</a>
             <a href="#contact" onclick="playSound()" class="block hover:text-darknavy">Contact</a>
             <div class="pt-3 border-t border-slate-100">
-                <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="block w-full text-center bg-[#B2B5E0] text-slate-900 font-bold py-2.5 rounded-xl">
+                <a href="https://wa.me/918171820009" target="_blank" onclick="playSound('cta')" class="block w-full text-center bg-[#B2B5E0] text-slate-900 font-bold py-2.5 rounded-xl">
                     <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp Connect
                 </a>
             </div>
@@ -112,7 +112,7 @@
                         Comprehensive end-to-end guidance for research writing, thesis support, data analysis, and successful placement in Scopus, SCI, and UGC-approved peer-reviewed journals.
                     </p>
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                        <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center space-x-2">
+                        <a href="https://wa.me/918171820009" target="_blank" onclick="playSound('cta')" class="bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center space-x-2">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                             <span>Connect on WhatsApp</span>
                         </a>
@@ -159,7 +159,7 @@
                                     <div class="text-base font-extrabold text-darknavy">+91 81718 20009</div>
                                 </div>
                             </div>
-                            <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="w-full bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold py-3.5 rounded-xl transition text-sm shadow flex items-center justify-center space-x-2">
+                            <a href="https://wa.me/918171820009" target="_blank" onclick="playSound('cta')" class="w-full bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold py-3.5 rounded-xl transition text-sm shadow flex items-center justify-center space-x-2">
                                 <i class="fa-solid fa-phone mr-2"></i> Call Now / WhatsApp
                             </a>
                         </div>
@@ -417,7 +417,7 @@
                 <div>
                     <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-[#C5ADC5]">Direct WhatsApp Advisory</h4>
                     <p class="text-xs text-slate-300 mb-3"><i class="fa-brands fa-whatsapp text-[#C5ADC5] mr-2 text-base"></i> +91 81718 20009 (Mon – Sat: 9:30 AM to 7:00 PM IST)</p>
-                    <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="inline-block bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold text-xs px-4 py-2.5 rounded-xl transition shadow">
+                    <a href="https://wa.me/918171820009" target="_blank" onclick="playSound('cta')" class="inline-block bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold text-xs px-4 py-2.5 rounded-xl transition shadow">
                         Open WhatsApp Web &rarr;
                     </a>
                 </div>
@@ -428,61 +428,171 @@
         </div>
     </footer>
 
-    <!-- Web Audio API Script -->
+    <!-- Responsive Floating Sound Controller (Mobile & Desktop) -->
+    <div class="fixed bottom-5 left-5 z-40 sm:bottom-6 sm:left-6">
+        <button id="floatingSoundBtn" onclick="toggleSound(event)" class="bg-white/95 backdrop-blur-md border border-[#C5ADC5]/40 shadow-lg text-slate-800 text-xs font-bold px-3.5 py-2 rounded-full flex items-center space-x-2 hover:bg-slate-50 transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C5ADC5]" title="Toggle Audio Experience" aria-label="Toggle Audio Effects">
+            <span id="floatingSoundPulse" class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <i id="floatingSoundIcon" class="fa-solid fa-volume-high text-[#7E83C4]"></i>
+            <span id="floatingSoundText" class="text-[11px] font-semibold text-slate-700 hidden sm:inline">Audio On</span>
+        </button>
+    </div>
+
+    <!-- Responsive Web Audio API Script -->
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobileMenuBtn');
         const menu = document.getElementById('mobileMenu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
 
-        // Web Audio API Context
+        // ==========================================
+        // Responsive Web Audio API Engine
+        // ==========================================
         let audioCtx = null;
+        let isSoundActive = localStorage.getItem('as_sound_enabled') !== 'false';
 
+        // Unlock audio context instantly on user interaction (touch, click, key)
         function initAudioContext() {
             if (!audioCtx) {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                audioCtx = new AudioContext();
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (AudioContextClass) {
+                    audioCtx = new AudioContextClass();
+                }
             }
-            if (audioCtx.state === 'suspended') {
+            if (audioCtx && audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }
         }
 
-        function playSound() {
-            initAudioContext();
-            if (!audioCtx) return;
-            try {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5 note
-                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.15);
-            } catch(e) {}
+        // Global low-latency unlock listeners
+        ['click', 'touchstart', 'pointerdown', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, () => initAudioContext(), { once: true, passive: true });
+        });
+
+        // Lifecycle optimization: pause when tab hidden to save device battery
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && audioCtx && audioCtx.state === 'running') {
+                audioCtx.suspend();
+            } else if (!document.hidden && audioCtx && audioCtx.state === 'suspended' && isSoundActive) {
+                audioCtx.resume();
+            }
+        });
+
+        // Synchronize UI status across header and floating buttons
+        function updateSoundUI() {
+            const soundIcon = document.getElementById('soundIcon');
+            const soundStatusText = document.getElementById('soundStatusText');
+            const soundToggleBtn = document.getElementById('soundToggleBtn');
+            const floatingIcon = document.getElementById('floatingSoundIcon');
+            const floatingText = document.getElementById('floatingSoundText');
+            const floatingPulse = document.getElementById('floatingSoundPulse');
+
+            if (isSoundActive) {
+                if (soundIcon) soundIcon.className = "fa-solid fa-volume-high animate-pulse";
+                if (soundStatusText) soundStatusText.textContent = "Sound: Active";
+                if (soundToggleBtn) {
+                    soundToggleBtn.className = "bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400";
+                }
+                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-high text-[#7E83C4]";
+                if (floatingText) floatingText.textContent = "Audio On";
+                if (floatingPulse) floatingPulse.className = "w-2 h-2 rounded-full bg-emerald-500 animate-ping";
+            } else {
+                if (soundIcon) soundIcon.className = "fa-solid fa-volume-xmark text-slate-400";
+                if (soundStatusText) soundStatusText.textContent = "Sound: Muted";
+                if (soundToggleBtn) {
+                    soundToggleBtn.className = "bg-slate-700/50 hover:bg-slate-700 text-slate-400 border border-slate-600 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none";
+                }
+                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-xmark text-slate-400";
+                if (floatingText) floatingText.textContent = "Audio Muted";
+                if (floatingPulse) floatingPulse.className = "w-2 h-2 rounded-full bg-slate-400";
+            }
         }
 
-        function playHoverSound() {
+        // Toggle sound active state with audio confirmation
+        function toggleSound(e) {
+            if (e) e.stopPropagation();
+            initAudioContext();
+            isSoundActive = !isSoundActive;
+            localStorage.setItem('as_sound_enabled', isSoundActive);
+            updateSoundUI();
+            if (isSoundActive) {
+                playChime([523.25, 659.25, 783.99], 0.08, 0.035); // Ascending C major chime
+            } else {
+                playChime([659.25, 440], 0.07, 0.02); // Descending gentle mute tone
+            }
+        }
+
+        // Responsive tone synthesizer with smooth envelopes
+        function playTone(freq, type = 'sine', duration = 0.12, gainLevel = 0.04) {
+            if (!isSoundActive) return;
             initAudioContext();
             if (!audioCtx) return;
             try {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(440, audioCtx.currentTime); // A4 note
-                gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+                const now = audioCtx.currentTime;
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, now);
+                gain.gain.setValueAtTime(gainLevel, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.08);
-            } catch(e) {}
+                osc.start(now);
+                osc.stop(now + duration);
+            } catch (err) {}
         }
+
+        // Chord / multi-tone helper for joyful micro-interactions
+        function playChime(frequencies, noteSpacing = 0.08, gainLevel = 0.035) {
+            if (!isSoundActive) return;
+            initAudioContext();
+            if (!audioCtx) return;
+            try {
+                const now = audioCtx.currentTime;
+                frequencies.forEach((freq, idx) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    const noteTime = now + (idx * noteSpacing);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, noteTime);
+                    gain.gain.setValueAtTime(gainLevel, noteTime);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 0.22);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(noteTime);
+                    osc.stop(noteTime + 0.22);
+                });
+            } catch (err) {}
+        }
+
+        // Responsive click / tap sound (instantaneous on mobile and desktop)
+        function playSound(variant = 'default') {
+            if (!isSoundActive) return;
+            if (variant === 'cta') {
+                playChime([659.25, 880], 0.09, 0.045); // E5 -> A5 ascending chime for CTA / WhatsApp
+            } else {
+                playTone(587.33, 'sine', 0.12, 0.04); // Crisp D5 note
+            }
+        }
+
+        // Responsive hover sound (gentle micro-tone, desktop-optimized)
+        function playHoverSound() {
+            if (!isSoundActive) return;
+            // Only trigger hover if device supports hover to prevent mobile double-firing
+            if (window.matchMedia('(hover: hover)').matches) {
+                playTone(440, 'triangle', 0.07, 0.015); // A4 soft blip
+            }
+        }
+
+        // Initialize UI state on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSoundUI();
+        });
+        // Also run immediately in case DOM is already ready
+        updateSoundUI();
     </script>
 </body>
 </html>
