@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS Research Pub — Open Access Academic & Scientific Publishing</title>
-    <meta name="description" content="AS Research Pub is an elite peer-reviewed academic publishing platform providing fast review cycles, CrossRef DOI assignment, and open access dissemination.">
+    <title>AS Research Pub — Academic Research & Publishing Consultancy | Kanpur, India</title>
+    <meta name="description" content="AS Research Pub is a premier Kanpur-based academic research and journal publishing consultancy offering Scopus/SCI publication support, thesis guidance, statistical analysis, and plagiarism reduction.">
+    <meta name="keywords" content="academic research consultancy Kanpur, Scopus publication services, UGC CARE journal assistance, PhD thesis consulting Kanpur, statistical analysis SPSS, plagiarism reduction Turnitin">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -21,8 +17,11 @@
                         primary: '#1D4ED8',
                         primaryHover: '#1E40AF',
                         darknavy: '#0F172A',
+                        slateDark: '#1E293B',
                         slatebg: '#F8FAFC',
                         slateborder: '#E2E8F0',
+                        whatsapp: '#25D366',
+                        whatsappHover: '#1EBE5D',
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -32,147 +31,320 @@
             }
         }
     </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #0F172A; }
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: #F1F5F9; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
         ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+        .academic-card { transition: all 0.25s ease-in-out; }
+        .academic-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08); }
     </style>
 </head>
-<body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
+<body class="bg-white text-slate-800 antialiased selection:bg-blue-100 selection:text-primary">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-darknavy text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium border-b border-slate-800">
-        <span class="bg-blue-600 text-white text-[11px] px-2.5 py-0.5 rounded-full font-semibold mr-2 font-mono">ISSN 2583-XXXX</span> 
-        Call for Papers: Volume 4, Issue 4 (October 2026) Now Open. Fast Peer Review & DOI Assignment.
-        <a href="#submit" class="underline underline-offset-2 ml-2 text-blue-300 hover:text-white font-semibold">Submit Now &rarr;</a>
+    <!-- Top Institutional Bar -->
+    <div class="bg-darknavy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-center sm:text-left">
+                <span class="inline-flex items-center gap-1.5 py-0.5 px-2 rounded-full text-[10px] font-bold bg-blue-600/30 text-blue-300 border border-blue-500/30">
+                    <i class="fa-solid fa-location-dot text-red-400"></i> Kanpur, Uttar Pradesh
+                </span>
+                <span class="hidden md:inline text-slate-400">|</span>
+                <span>Institutional Academic Research & Publication Consultancy Division</span>
+            </div>
+            <div class="flex items-center gap-4 text-[11px] text-slate-300">
+                <a href="mailto:contact@asresearchpub.com" class="hover:text-white transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-blue-400"></i> contact@asresearchpub.com
+                </a>
+                <span class="text-slate-600">•</span>
+                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20academic%20research%20and%20publication%20consultancy%20support." target="_blank" class="text-whatsapp font-semibold hover:text-emerald-400 transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Support
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slateborder shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center space-x-3 group">
+            <!-- Institutional Brand Identity -->
+            <a href="#home" class="flex items-center space-x-3.5 group">
                 <div class="w-11 h-11 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
                     AS
                 </div>
                 <div>
                     <span class="text-xl font-extrabold tracking-tight text-darknavy block leading-none">AS Research Pub</span>
-                    <span class="text-xs text-slate-500 font-medium tracking-wide">Academic & Scientific Publications</span>
+                    <span class="text-[11px] text-slate-500 font-semibold tracking-wide uppercase mt-0.5 block">Academic Consultancy • Kanpur</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-slate-600">
-                <a href="#journals" class="hover:text-primary transition-colors">Journals</a>
-                <a href="#articles" class="hover:text-primary transition-colors">Latest Articles</a>
-                <a href="#submit" class="hover:text-primary transition-colors">Submit Paper</a>
-                <a href="#pricing" class="hover:text-primary transition-colors">APC & Pricing</a>
-                <a href="#guidelines" class="hover:text-primary transition-colors">Author Guidelines</a>
-                <a href="#ethics" class="hover:text-primary transition-colors">Ethics & Policy</a>
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="hover:text-primary transition-colors">About Us</a>
+                <a href="#services" class="hover:text-primary transition-colors">Consultancy Services</a>
+                <a href="#why-us" class="hover:text-primary transition-colors">Why Choose Us</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors">Researcher Testimonials</a>
+                <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
             </nav>
 
-            <!-- CTA Actions -->
+            <!-- Action Controls: WhatsApp & Consultation CTA -->
             <div class="hidden md:flex items-center space-x-3">
-                <button onclick="document.getElementById('searchInput').focus(); window.scrollTo({top: 200, behavior: 'smooth'});" class="p-2 text-slate-500 hover:text-primary rounded-xl hover:bg-slate-100 transition" title="Search papers">
-                    <i class="fa-solid fa-magnifying-glass text-base"></i>
-                </button>
-                <a href="#submit" class="bg-primary hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
-                    <i class="fa-solid fa-file-arrow-up"></i>
-                    <span>Submit Manuscript</span>
+                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20expert%20academic%20research%20support." target="_blank" class="bg-whatsapp hover:bg-whatsappHover text-white px-4 py-2.5 rounded-xl font-bold text-xs shadow-xs transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>WhatsApp Connect</span>
                 </a>
+                <button onclick="openConsultationModal('General Inquiry')" class="bg-primary hover:bg-primaryHover text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-sm transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Book Consultation</span>
+                </button>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-slate-700 text-xl focus:outline-none p-2 rounded-lg hover:bg-slate-100" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <!-- Mobile Menu Toggle Button -->
+            <div class="lg:hidden flex items-center space-x-2">
+                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="bg-whatsapp text-white p-2 rounded-lg text-sm" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <button id="mobileMenuBtn" class="p-2 text-slate-700 hover:text-darknavy rounded-lg focus:outline-none" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Mobile Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 font-medium text-slate-700 shadow-lg">
-            <a href="#journals" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Journals</a>
-            <a href="#articles" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Latest Articles</a>
-            <a href="#submit" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Submit Paper</a>
-            <a href="#pricing" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">APC & Pricing</a>
-            <a href="#guidelines" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Author Guidelines</a>
-            <a href="#ethics" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Ethics & Policy</a>
-            <div class="pt-3 border-t border-slate-100">
-                <a href="#submit" onclick="toggleMobileMenu()" class="block w-full text-center bg-primary text-white py-2.5 rounded-xl font-semibold shadow-sm">
-                    Submit Manuscript
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slateborder px-6 py-5 space-y-3 font-semibold text-slate-700 shadow-xl">
+            <a href="#home" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">Home</a>
+            <a href="#about" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">About Us</a>
+            <a href="#services" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">Consultancy Services</a>
+            <a href="#why-us" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">Why Choose Us</a>
+            <a href="#testimonials" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">Researcher Testimonials</a>
+            <a href="#faq" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">FAQ</a>
+            <a href="#contact" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">Contact</a>
+            <div class="pt-3 border-t border-slateborder flex flex-col gap-2">
+                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="w-full text-center bg-whatsapp text-white py-3 rounded-xl font-bold text-xs shadow-xs flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Connect
                 </a>
+                <button onclick="openConsultationModal('General Inquiry'); toggleMobileMenu();" class="w-full text-center bg-primary text-white py-3 rounded-xl font-bold text-xs shadow-xs">
+                    Book Consultation
+                </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 py-16 lg:py-24 overflow-hidden border-b border-slate-200">
+    <section id="home" class="relative bg-gradient-to-b from-white via-slatebg to-white py-16 lg:py-24 border-b border-slateborder overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Institutional Value Proposition -->
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 text-primary px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide">
-                        <i class="fa-solid fa-shield-check text-blue-600"></i>
-                        <span>UGC-CARE Compliant & Peer-Reviewed Infrastructure</span>
+                        <i class="fa-solid fa-certificate text-blue-600"></i>
+                        <span>Kanpur's Premier Academic Research & Publishing Advisory</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darknavy tracking-tight leading-[1.15]">
-                        Advancing Global Research Through <span class="text-primary">Open Access Publishing</span>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-darknavy tracking-tight leading-[1.15]">
+                        Empowering Scholars with End-to-End <span class="text-primary">Research & Publication Consulting</span>
                     </h1>
-                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-                        A peer-reviewed academic publishing platform providing fast review cycles, DOI assignment, and rigorous editorial standards for researchers, scholars, and institutional authors across diverse scientific domains.
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                        Based out of Kanpur, Uttar Pradesh, <strong>AS Research Pub</strong> provides institutional-grade academic consultancy for professors, PhD scholars, and research institutions. We streamline manuscript structuring, Scopus/SCI publication pathways, statistical computation, and strict COPE ethical compliance.
                     </p>
+
+                    <!-- CTA Group -->
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#submit" class="bg-primary hover:bg-blue-700 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20 transition-all flex items-center space-x-2">
-                            <span>Submit Your Paper</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#journals" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold px-7 py-3.5 rounded-xl transition">
-                            Explore Journals
+                        <button onclick="openConsultationModal('Research Proposal & Paper Support')" class="bg-primary hover:bg-primaryHover text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20 transition-all flex items-center space-x-2 transform hover:-translate-y-0.5">
+                            <span>Get Free Research Evaluation</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                        <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20want%20to%20discuss%20my%20academic%20paper%20consultation." target="_blank" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold px-6 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-whatsapp text-lg"></i>
+                            <span>Chat on WhatsApp</span>
                         </a>
                     </div>
-                    <!-- Stats Grid -->
-                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200">
-                        <div>
-                            <div class="text-2xl lg:text-3xl font-extrabold text-darknavy">14 Days</div>
-                            <div class="text-xs text-slate-500 font-medium mt-0.5">Average Review Time</div>
+
+                    <!-- Verified Institutional Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slateborder">
+                        <div class="bg-white p-3.5 rounded-2xl border border-slateborder">
+                            <div class="text-2xl font-extrabold text-darknavy">1,850+</div>
+                            <div class="text-[11px] text-slate-500 font-medium">Papers Consulted</div>
                         </div>
-                        <div>
-                            <div class="text-2xl lg:text-3xl font-extrabold text-darknavy">100%</div>
-                            <div class="text-xs text-slate-500 font-medium mt-0.5">Open Access (CC-BY)</div>
+                        <div class="bg-white p-3.5 rounded-2xl border border-slateborder">
+                            <div class="text-2xl font-extrabold text-primary">98.4%</div>
+                            <div class="text-[11px] text-slate-500 font-medium">Scopus/SCI Acceptance Rate</div>
                         </div>
-                        <div>
-                            <div class="text-2xl lg:text-3xl font-extrabold text-primary font-mono">CrossRef</div>
-                            <div class="text-xs text-slate-500 font-medium mt-0.5">Permanent DOI Assured</div>
+                        <div class="bg-white p-3.5 rounded-2xl border border-slateborder">
+                            <div class="text-2xl font-extrabold text-darknavy">450+</div>
+                            <div class="text-[11px] text-slate-500 font-medium">Theses Guided</div>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-2xl border border-slateborder">
+                            <div class="text-2xl font-extrabold text-emerald-600">&lt;10%</div>
+                            <div class="text-[11px] text-slate-500 font-medium">Similarity Guaranteed</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interactive Quick Search / Submission Widget -->
+                <!-- Right Column: Instant Intake Box -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white p-7 sm:p-8 rounded-3xl shadow-xl border border-slate-200 relative">
-                        <div class="absolute -top-3 right-6 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm">Instant Lookup</div>
-                        <h3 class="text-xl font-bold text-darknavy mb-1">Search Published Articles</h3>
-                        <p class="text-xs text-slate-500 mb-6">Access peer-reviewed papers across multidisciplinary subjects.</p>
-                        
-                        <div class="space-y-4">
+                    <div class="bg-white p-7 sm:p-8 rounded-3xl shadow-xl border border-slateborder relative">
+                        <div class="absolute -top-3 right-6 bg-primary text-white text-[11px] px-3 py-1 rounded-full font-bold shadow-xs">
+                            Confidential Intake Desk
+                        </div>
+                        <h3 class="text-xl font-bold text-darknavy mb-1">Request Expert Research Consultation</h3>
+                        <p class="text-xs text-slate-500 mb-6">Receive guidance on journal selection, thesis structuring, or statistical analysis within 4 hours.</p>
+
+                        <form onsubmit="handleHeroConsultation(event)" class="space-y-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Keyword or Title</label>
-                                <input type="text" id="searchInput" onkeydown="if(event.key==='Enter') handleSearch()" placeholder="e.g. Artificial Intelligence, Renewable Energy..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Scholar / Author Name *</label>
+                                <input type="text" id="heroName" required placeholder="e.g. Dr. / Er. / Scholar Name" class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">WhatsApp / Phone *</label>
+                                    <input type="tel" id="heroPhone" required placeholder="+91 XXXXX XXXXX" class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Academic Email *</label>
+                                    <input type="email" id="heroEmail" required placeholder="scholar@university.ac.in" class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Select Field</label>
-                                <select id="fieldSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
-                                    <option value="">All Disciplines</option>
-                                    <option value="engineering">Engineering & Technology</option>
-                                    <option value="management">Management & Commerce</option>
-                                    <option value="science">Applied Sciences & Research</option>
-                                    <option value="humanities">Humanities & Social Sciences</option>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Target Service Required *</label>
+                                <select id="heroService" required class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                                    <option value="Publication Services (Scopus, SCI, UGC)">Publication Services (Scopus, SCI, UGC-CARE)</option>
+                                    <option value="Academic Writing Support">Academic Manuscript Drafting</option>
+                                    <option value="Thesis & Dissertation Consulting">PhD Thesis & Dissertation Guidance</option>
+                                    <option value="Data & Statistical Analysis (SPSS, R, Python)">Data & Statistical Analysis (SPSS/R/SmartPLS)</option>
+                                    <option value="SLR & Bibliometric Analysis (PRISMA, VOSviewer)">Systematic Review (PRISMA & Bibliometrics)</option>
+                                    <option value="Plagiarism Reduction & Turnitin Similarity">Plagiarism Reduction & Technical Paraphrasing</option>
+                                    <option value="Editing, Proofreading & Journal Formatting">Language Proofreading & Journal Typesetting</option>
                                 </select>
                             </div>
-                            <button onclick="handleSearch()" class="w-full bg-darknavy hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition text-sm shadow flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <span>Search Research Archive</span>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Research Field & Paper Topic</label>
+                                <input type="text" id="heroTopic" placeholder="e.g. Mechanical Engg, Deep Learning, Oncology, Finance..." class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-3.5 rounded-xl transition text-sm shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                                <span>Submit for Free Diagnostic Review</span>
                             </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Standards & Indexing Trust Bar -->
+    <div class="bg-white py-10 border-b border-slateborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-6">
+                Consulting Across Leading Indexing Databases & Global Publisher Standards
+            </span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-center text-slate-600 font-bold text-sm">
+                <div class="p-3 bg-slatebg rounded-xl border border-slateborder flex items-center justify-center gap-2 hover:border-primary transition">
+                    <i class="fa-solid fa-database text-orange-500"></i>
+                    <span>SCOPUS (Elsevier)</span>
+                </div>
+                <div class="p-3 bg-slatebg rounded-xl border border-slateborder flex items-center justify-center gap-2 hover:border-primary transition">
+                    <i class="fa-solid fa-atom text-blue-600"></i>
+                    <span>Web of Science (SCI/SCIE)</span>
+                </div>
+                <div class="p-3 bg-slatebg rounded-xl border border-slateborder flex items-center justify-center gap-2 hover:border-primary transition">
+                    <i class="fa-solid fa-landmark text-emerald-600"></i>
+                    <span>UGC-CARE (Gr. I & II)</span>
+                </div>
+                <div class="p-3 bg-slatebg rounded-xl border border-slateborder flex items-center justify-center gap-2 hover:border-primary transition">
+                    <i class="fa-solid fa-microchip text-indigo-600"></i>
+                    <span>IEEE Xplore</span>
+                </div>
+                <div class="p-3 bg-slatebg rounded-xl border border-slateborder flex items-center justify-center gap-2 hover:border-primary transition">
+                    <i class="fa-solid fa-book-open text-amber-600"></i>
+                    <span>Springer Nature</span>
+                </div>
+                <div class="p-3 bg-slatebg rounded-xl border border-slateborder flex items-center justify-center gap-2 hover:border-primary transition">
+                    <i class="fa-solid fa-link text-purple-600"></i>
+                    <span>Crossref DOIs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                        About Our Consultancy
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy">
+                        Kanpur-Based Academic Consulting Built for Research Excellence
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        Headquartered in Kanpur, Uttar Pradesh — the prominent intellectual and engineering corridor of Northern India — <strong>AS Research Pub</strong> operates as an institutional consultancy dedicated solely to elevating scholarly research output.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        Our collective consists of subject-matter research consultants, computational statisticians, and peer-review specialists spanning engineering, pharmaceutical sciences, biomedical engineering, management, and physical sciences. We work with strict confidentiality agreements (NDAs) to protect researcher intellectual property.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-slatebg rounded-2xl border border-slateborder">
+                            <i class="fa-solid fa-scale-balanced text-primary text-xl mb-2"></i>
+                            <h4 class="font-bold text-darknavy text-sm">COPE Ethical Standards</h4>
+                            <p class="text-xs text-slate-500 mt-1">Zero predatory practices. Complete compliance with international publication ethics.</p>
+                        </div>
+                        <div class="p-4 bg-slatebg rounded-2xl border border-slateborder">
+                            <i class="fa-solid fa-user-shield text-emerald-600 text-xl mb-2"></i>
+                            <h4 class="font-bold text-darknavy text-sm">100% Non-Disclosure (NDA)</h4>
+                            <p class="text-xs text-slate-500 mt-1">Full intellectual property protection for all manuscripts, datasets, and synopses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-slatebg rounded-3xl p-8 sm:p-10 border border-slateborder relative">
+                        <h3 class="text-xl font-bold text-darknavy mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-bullseye text-primary"></i> Our Core Institutional Commitments
+                        </h3>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-darknavy">Target Journal Fitment</h4>
+                                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Matching paper scope meticulously against authentic Scopus, Web of Science (SCI/SCIE), and UGC-CARE journals to eliminate desk rejections.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-darknavy">Turnitin Similarity Rectification</h4>
+                                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Conceptual rephrasing and technical restructuring keeping total similarity beneath institution-mandated limits (&lt;10%).</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 font-bold flex items-center justify-center shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-darknavy">Statistical Rigor & Proof</h4>
+                                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Rigorous hypothesis testing, structural equation modeling (SEM), and publication-ready visualization charts.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 font-bold flex items-center justify-center shrink-0">4</div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-darknavy">Post-Review Editorial Defense</h4>
+                                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Consultative support for drafting point-by-point reviewer rebuttal letters through minor and major revision cycles.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,456 +352,761 @@
         </div>
     </section>
 
-    <!-- Journals & Disciplines Section -->
-    <section id="journals" class="py-20 bg-white">
+    <!-- 7 Core Consultancy Services Section -->
+    <section id="services" class="py-20 bg-slatebg border-t border-b border-slateborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Peer-Reviewed Catalogs</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Active Research Journals</h2>
-                <p class="text-slate-600 text-sm sm:text-base mt-2">Browse our high-impact peer-reviewed open access journals catering to global academic standards.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Journal Card 1 -->
-                <div class="bg-slatebg border border-slate-200 rounded-3xl p-6 hover:shadow-xl transition-all flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-blue-100 text-primary text-xs font-bold px-3 py-1 rounded-full">Engineering</span>
-                            <span class="text-xs text-slate-500 font-mono">ISSN: 2583-1011</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-darknavy mb-2 group-hover:text-primary transition-colors">International Journal of Advanced Engineering & Computing</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Focuses on software engineering, artificial intelligence, IoT architectures, and computational systems.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
-                        <span class="font-semibold text-slate-700">Frequency: Bimonthly</span>
-                        <a href="#submit" onclick="preselectJournal('eng')" class="text-primary font-bold hover:underline flex items-center gap-1">
-                            Submit Paper &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Journal Card 2 -->
-                <div class="bg-slatebg border border-slate-200 rounded-3xl p-6 hover:shadow-xl transition-all flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Management</span>
-                            <span class="text-xs text-slate-500 font-mono">ISSN: 2583-1028</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-darknavy mb-2 group-hover:text-primary transition-colors">Journal of Modern Business Strategy & Economics</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Covers contemporary corporate strategies, financial analytics, digital marketing trends, and economic policy.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
-                        <span class="font-semibold text-slate-700">Frequency: Quarterly</span>
-                        <a href="#submit" onclick="preselectJournal('mgmt')" class="text-primary font-bold hover:underline flex items-center gap-1">
-                            Submit Paper &rarr;
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Journal Card 3 -->
-                <div class="bg-slatebg border border-slate-200 rounded-3xl p-6 hover:shadow-xl transition-all flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Applied Science</span>
-                            <span class="text-xs text-slate-500 font-mono">ISSN: 2583-1044</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-darknavy mb-2 group-hover:text-primary transition-colors">Journal of Applied Scientific Research & Innovation</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Publishes empirical research in biotechnology, renewable energy systems, material science, and applied physics.</p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
-                        <span class="font-semibold text-slate-700">Frequency: Monthly</span>
-                        <a href="#submit" onclick="preselectJournal('sci')" class="text-primary font-bold hover:underline flex items-center gap-1">
-                            Submit Paper &rarr;
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Latest Publications / Articles Showcase -->
-    <section id="articles" class="py-20 bg-slate-50 border-t border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Recent Publications</span>
-                    <h2 class="text-3xl font-extrabold text-darknavy mt-3">Latest Peer-Reviewed Articles</h2>
-                </div>
-                <p class="text-slate-600 text-xs sm:text-sm mt-2 md:mt-0 max-w-sm">
-                    Open access articles with DOI verification, full-text reading, and instant reference citation.
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    Comprehensive Portfolio
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">7 Core Academic Consultancy Services</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    Expert, domain-specific research support designed to help Indian and global scholars meet stringent doctoral and journal publication requirements.
                 </p>
             </div>
 
-            <div class="space-y-6">
-                <!-- Article 1 -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition">
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span class="bg-blue-50 text-primary text-xs font-bold px-3 py-1 rounded-full border border-blue-100">Engineering & AI</span>
-                        <span class="text-xs text-slate-500 font-mono">DOI: 10.2583/ASRP.2026.0492</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-darknavy hover:text-primary cursor-pointer transition mb-2" onclick="openPaperPreview('Transformer-Based Diagnostics in Clinical Oncology', '10.2583/ASRP.2026.0492')">
-                        Transformer-Based Architecture for Real-Time Multimodal Diagnostic Reasoning in Clinical Oncology
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-3">
-                        <span class="font-semibold text-slate-700">Authors:</span> Dr. Elena Vance, Prof. Marcus Thorne, Sarah Jenkins
-                    </p>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                        This study proposes an advanced transformer framework capable of synthesizing high-dimensional radiological imaging and genomic sequencing data to predict tumor progression trajectories with 94.2% sensitivity...
-                    </p>
-                    <div class="flex flex-wrap items-center justify-between pt-4 border-t border-slate-100 gap-4 text-xs">
-                        <div class="text-slate-500 flex items-center space-x-4">
-                            <span><i class="fa-regular fa-calendar mr-1"></i> Oct 2026</span>
-                            <span><i class="fa-solid fa-eye mr-1"></i> 1,420 Views</span>
-                            <span><i class="fa-solid fa-download mr-1"></i> 890 Downloads</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button onclick="copyCitation('Transformer-Based Architecture for Real-Time Multimodal Diagnostic Reasoning in Clinical Oncology', 'Vance et al. (2026)', '10.2583/ASRP.2026.0492')" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition">
-                                <i class="fa-solid fa-quote-right mr-1"></i> Cite
-                            </button>
-                            <button onclick="openPaperPreview('Transformer-Based Diagnostics in Clinical Oncology', '10.2583/ASRP.2026.0492')" class="px-4 py-2 bg-primary hover:bg-blue-700 text-white font-semibold rounded-xl transition flex items-center gap-1.5 shadow-xs">
-                                <i class="fa-solid fa-file-pdf"></i> Read Paper
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Article 2 -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition">
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span class="bg-emerald-50 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100">Applied Science</span>
-                        <span class="text-xs text-slate-500 font-mono">DOI: 10.2583/ASRP.2026.0381</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-darknavy hover:text-primary cursor-pointer transition mb-2" onclick="openPaperPreview('Next-Gen Solid-State Lithium-Sulfur Batteries', '10.2583/ASRP.2026.0381')">
-                        Next-Generation Solid-State Lithium-Sulfur Batteries with Nanoporous Graphene Interlayers
-                    </h3>
-                    <p class="text-xs text-slate-500 mb-3">
-                        <span class="font-semibold text-slate-700">Authors:</span> Dr. Amir Al-Mansoor, Dr. Li Wei, Rachel Green
-                    </p>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                        High-capacity energy storage remains a primary bottleneck for large-scale renewable integration. Herein, we demonstrate a novel solid-state lithium-sulfur battery architecture utilizing functionalized nanoporous graphene...
-                    </p>
-                    <div class="flex flex-wrap items-center justify-between pt-4 border-t border-slate-100 gap-4 text-xs">
-                        <div class="text-slate-500 flex items-center space-x-4">
-                            <span><i class="fa-regular fa-calendar mr-1"></i> Oct 2026</span>
-                            <span><i class="fa-solid fa-eye mr-1"></i> 2,105 Views</span>
-                            <span><i class="fa-solid fa-download mr-1"></i> 1,340 Downloads</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button onclick="copyCitation('Next-Generation Solid-State Lithium-Sulfur Batteries with Nanoporous Graphene Interlayers', 'Al-Mansoor et al. (2026)', '10.2583/ASRP.2026.0381')" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition">
-                                <i class="fa-solid fa-quote-right mr-1"></i> Cite
-                            </button>
-                            <button onclick="openPaperPreview('Next-Gen Solid-State Lithium-Sulfur Batteries', '10.2583/ASRP.2026.0381')" class="px-4 py-2 bg-primary hover:bg-blue-700 text-white font-semibold rounded-xl transition flex items-center gap-1.5 shadow-xs">
-                                <i class="fa-solid fa-file-pdf"></i> Read Paper
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- APC & Pricing Section -->
-    <section id="pricing" class="py-20 bg-slatebg border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Transparent Structure</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Article Processing Charges (APC)</h2>
-                <p class="text-slate-600 text-sm sm:text-base mt-2">Affordable publishing fees structured for researchers and students with zero hidden charges.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Plan 1 -->
-                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Academic Writing -->
+                <div class="academic-card bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Indian Researchers</div>
-                        <div class="text-3xl font-extrabold text-darknavy mb-4">₹1,500 <span class="text-xs font-normal text-slate-500">/ paper</span></div>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Standard online publication with e-certificate for authors and DOI inclusion.</p>
-                        <ul class="space-y-3 text-xs text-slate-700 mb-8">
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Peer Review within 7 days</li>
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Crossref DOI Assignment</li>
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> E-Certificate for all authors</li>
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Open Access PDF Hosting</li>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-primary flex items-center justify-center text-xl mb-5 font-bold">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2.5">1. Academic Writing Support</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            Structuring and composing high-level scholarly manuscripts, comprehensive review articles, and scientific case studies conforming strictly to IMRaD standards.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Structured abstract & hypothesis drafting</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Technical narrative & methodology logic</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> High-impact introduction & literature review</li>
                         </ul>
                     </div>
-                    <a href="#submit" class="w-full bg-slate-100 hover:bg-slate-200 text-darknavy font-semibold py-3 rounded-xl text-center text-xs transition block">Choose Standard</a>
-                </div>
-
-                <!-- Plan 2 (Featured) -->
-                <div class="bg-darknavy text-white border-2 border-primary rounded-3xl p-8 shadow-xl flex flex-col justify-between relative transform md:-translate-y-2">
-                    <div class="absolute -top-3 right-6 bg-primary text-white text-xs px-3 py-1 rounded-full font-bold shadow">Most Popular</div>
-                    <div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Fast-Track Indian Scholars</div>
-                        <div class="text-3xl font-extrabold text-white mb-4">₹2,500 <span class="text-xs font-normal text-slate-400">/ paper</span></div>
-                        <p class="text-xs text-slate-300 mb-6 leading-relaxed">Priority editorial handling and express peer review within 48 hours.</p>
-                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
-                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Priority Review (48 Hours)</li>
-                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Dedicated Editor Assistance</li>
-                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Crossref DOI Assignment</li>
-                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Hardcopy Certificates (Optional)</li>
-                        </ul>
-                    </div>
-                    <a href="#submit" class="w-full bg-primary hover:bg-blue-600 text-white font-semibold py-3 rounded-xl text-center text-xs transition shadow block">Select Fast-Track</a>
-                </div>
-
-                <!-- Plan 3 -->
-                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
-                    <div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">International Authors</div>
-                        <div class="text-3xl font-extrabold text-darknavy mb-4">$50 <span class="text-xs font-normal text-slate-500">/ paper</span></div>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Standard international processing for authors outside India.</p>
-                        <ul class="space-y-3 text-xs text-slate-700 mb-8">
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> International Peer Review</li>
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Crossref DOI Included</li>
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Permanent Web Archiving</li>
-                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Citation Export Tools</li>
-                        </ul>
-                    </div>
-                    <a href="#submit" class="w-full bg-slate-100 hover:bg-slate-200 text-darknavy font-semibold py-3 rounded-xl text-center text-xs transition block">Select International</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Author Guidelines Section -->
-    <section id="guidelines" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Submission Checklist</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Author Submission Guidelines</h2>
-                <p class="text-slate-600 text-sm mt-2">Ensure your research manuscript strictly conforms to these guidelines prior to final upload.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slatebg p-6 rounded-2xl border border-slate-200">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center mb-4">1</div>
-                    <h3 class="text-base font-bold text-darknavy mb-2">Manuscript Formatting</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Manuscripts should be in Microsoft Word (.docx) or PDF double-column format using standard IEEE or APA 7th style conventions with high-resolution figures.
-                    </p>
-                </div>
-                <div class="bg-slatebg p-6 rounded-2xl border border-slate-200">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center mb-4">2</div>
-                    <h3 class="text-base font-bold text-darknavy mb-2">Originality & Plagiarism</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Similarity index must not exceed 15% (excluding references). All submissions are automatically processed through automated Crossref similarity detection tools.
-                    </p>
-                </div>
-                <div class="bg-slatebg p-6 rounded-2xl border border-slate-200">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center mb-4">3</div>
-                    <h3 class="text-base font-bold text-darknavy mb-2">Copyright & Licensing</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        Authors retain full copyright under the Creative Commons Attribution 4.0 International (CC-BY 4.0) license, allowing unrestricted scholarly reuse with credit.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Manuscript Submission Section -->
-    <section id="submit" class="py-20 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-md">
-                <div class="text-center max-w-xl mx-auto mb-10">
-                    <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Online Submission</span>
-                    <h2 class="text-3xl font-extrabold text-darknavy mt-3">Submit Your Manuscript</h2>
-                    <p class="text-slate-600 text-sm mt-2">Fill out the form below to submit your research paper for immediate peer review.</p>
-                </div>
-
-                <form onsubmit="handleSubmission(event)" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Corresponding Author Name *</label>
-                            <input type="text" id="subAuthor" required placeholder="Dr. / Mr. / Ms. Full Name" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Email Address *</label>
-                            <input type="email" id="subEmail" required placeholder="author@institution.ac.in" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Select Journal / Discipline *</label>
-                            <select id="subJournal" required class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
-                                <option value="">Select Journal</option>
-                                <option value="eng">Int. Journal of Advanced Engineering & Computing</option>
-                                <option value="mgmt">Journal of Modern Business Strategy & Economics</option>
-                                <option value="sci">Journal of Applied Scientific Research & Innovation</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Paper Title *</label>
-                            <input type="text" id="subTitle" required placeholder="Full title of your research paper" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Abstract (Max 300 Words) *</label>
-                        <textarea required rows="4" placeholder="Provide a concise summary of your research objectives, methodology, and conclusions..." class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition"></textarea>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Upload Manuscript (PDF / DOCX) *</label>
-                        <input type="file" required accept=".pdf,.doc,.docx" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-primary hover:file:bg-blue-100">
-                    </div>
-
-                    <div class="flex items-center gap-2 text-xs text-slate-600">
-                        <input type="checkbox" required class="rounded text-primary focus:ring-primary">
-                        <span>I confirm that this manuscript represents original research and is not under review elsewhere.</span>
-                    </div>
-
-                    <div class="pt-2">
-                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all text-sm flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Complete Manuscript Submission</span>
+                    <div class="pt-4 border-t border-slateborder flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-slate-500 font-mono">IMRaD Standard</span>
+                        <button onclick="openConsultationModal('Academic Writing Support')" class="text-primary font-bold text-xs hover:underline flex items-center gap-1">
+                            Inquire Service &rarr;
                         </button>
                     </div>
-                </form>
+                </div>
+
+                <!-- Service 2: Publication Services (Scopus, SCI, UGC) -->
+                <div class="academic-card bg-white p-7 rounded-3xl border-2 border-primary/20 shadow-xs flex flex-col justify-between relative">
+                    <span class="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">Top In-Demand</span>
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-primary flex items-center justify-center text-xl mb-5 font-bold">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2.5">2. Publication Services (Scopus, SCI, UGC)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            End-to-end guidance through the full lifecycle of publishing in authenticated Scopus (Q1–Q4), Web of Science (SCI/SCIE), and UGC-CARE listed journals.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Verified indexation check (Zero cloned journals)</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Customized cover letter & reviewer nomination</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Full revision & rebuttal letter structuring</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Scopus / SCI / UGC</span>
+                        <button onclick="openConsultationModal('Publication Services (Scopus, SCI, UGC)')" class="text-primary font-bold text-xs hover:underline flex items-center gap-1">
+                            Inquire Service &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Thesis & Dissertation Support -->
+                <div class="academic-card bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-700 flex items-center justify-center text-xl mb-5 font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2.5">3. Thesis & Dissertation Support</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            Comprehensive assistance for Master’s dissertations and PhD theses from initial synopsis formulation, chapterization, to final pre-submission review.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Research gap identification & synopsis defense</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Complete 5-chapter thesis scaffolding</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> University-specific formatting & viva prep</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-slate-500 font-mono">PhD / M.Tech / MBA</span>
+                        <button onclick="openConsultationModal('Thesis & Dissertation Support')" class="text-primary font-bold text-xs hover:underline flex items-center gap-1">
+                            Inquire Service &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: SLR & Bibliometric Analysis -->
+                <div class="academic-card bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-700 flex items-center justify-center text-xl mb-5 font-bold">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2.5">4. SLR & Bibliometric Analysis</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            High-impact Systematic Literature Reviews adhering strictly to PRISMA 2020 guidelines alongside advanced bibliometric citation networks.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> PRISMA flowcharts & inclusion/exclusion matrix</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> VOSviewer network co-occurrence mapping</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> R-Biblioshiny thematic evolution plots</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-slate-500 font-mono">PRISMA + VOSviewer</span>
+                        <button onclick="openConsultationModal('SLR & Bibliometric Analysis')" class="text-primary font-bold text-xs hover:underline flex items-center gap-1">
+                            Inquire Service &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Data & Statistical Analysis -->
+                <div class="academic-card bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl mb-5 font-bold">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2.5">5. Data & Statistical Analysis</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            Quantitative and qualitative empirical data computation, hypothesis testing, model validation, and publication-ready graphic rendering.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> SPSS, R, Python, and STATA modeling</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Structural Equation Modeling (SmartPLS / AMOS)</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> ANOVA, Regression, and Machine Learning metrics</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-slate-500 font-mono">SPSS / PLS-SEM / R</span>
+                        <button onclick="openConsultationModal('Data & Statistical Analysis')" class="text-primary font-bold text-xs hover:underline flex items-center gap-1">
+                            Inquire Service &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6: Editing & Proofreading -->
+                <div class="academic-card bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl mb-5 font-bold">
+                            <i class="fa-solid fa-spell-check"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2.5">6. Editing & Proofreading</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                            Substantive linguistic editing to remove language barriers for Indian authors, enhancing readability and scholarly vocabulary.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Elimination of grammatical and syntax flaws</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> IEEE, APA 7th, Harvard, or Vancouver formatting</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Cross-reference and DOI integrity validation</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-slate-500 font-mono">Native Scholarly Tone</span>
+                        <button onclick="openConsultationModal('Editing & Proofreading')" class="text-primary font-bold text-xs hover:underline flex items-center gap-1">
+                            Inquire Service &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 7: Plagiarism Reduction (Full Width / Highlight Card) -->
+                <div class="academic-card bg-white p-7 rounded-3xl border border-slateborder shadow-xs md:col-span-2 lg:col-span-3 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-3">
+                        <div class="inline-flex items-center gap-2 bg-red-50 text-red-700 text-xs font-bold px-3 py-1 rounded-full border border-red-200">
+                            <i class="fa-solid fa-shield-virus"></i> Strict Turnitin Compliance
+                        </div>
+                        <h3 class="text-xl font-bold text-darknavy">7. Plagiarism Reduction & Ethical Paraphrasing</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
+                            Turnitin-verified similarity reduction via conceptual restructuring and intellectual rewriting. We replace verbatim match clusters while enhancing research terminology, safely bringing overall similarity scores beneath 10% without altering original scientific data.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-xs text-slate-600 pt-1">
+                            <span><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> Before & After Turnitin Reports</span>
+                            <span><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> 100% Human Technical Rewriting</span>
+                            <span><i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i> Zero AI Hallucination</span>
+                        </div>
+                    </div>
+                    <div class="shrink-0 w-full md:w-auto">
+                        <button onclick="openConsultationModal('Plagiarism Reduction & Paraphrasing')" class="w-full md:w-auto bg-darknavy hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl text-xs transition shadow flex items-center justify-center gap-2">
+                            <span>Upload for Similarity Check</span>
+                            <i class="fa-solid fa-upload"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ethics & Policy Section -->
-    <section id="ethics" class="py-20 bg-white border-t border-slate-200">
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Academic Standards</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Publication Ethics & COPE Compliance</h2>
-                <p class="text-slate-600 text-sm mt-2">AS Research Pub strictly adheres to international codes of conduct and ethical integrity.</p>
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    Institutional Benchmark
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Why Researchers Choose AS Research Pub</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    Professional, transparent academic consulting upholding the highest benchmarks of scientific integrity.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-slatebg p-8 rounded-3xl border border-slate-200">
-                    <h3 class="text-lg font-bold text-darknavy mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-scale-balanced text-primary"></i>
-                        <span>Double-Blind Peer Review Policy</span>
-                    </h3>
-                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                        To preserve impartiality, reviewer and author identities are reciprocally blinded throughout the evaluation cycle. Every submission is appraised by at least two independent subject matter specialists.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-7 rounded-3xl bg-slatebg border border-slateborder">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-xs border border-slateborder flex items-center justify-center text-primary text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="font-bold text-darknavy text-base mb-2">Domain-Specific PhD Advisors</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Every consultation request is assigned exclusively to senior subject-matter experts with direct publication credentials in high-impact Scopus/SCI journals.
                     </p>
-                    <ul class="text-xs text-slate-600 space-y-2">
-                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Initial Editorial Screening within 48 hours</li>
-                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Objective technical review without institutional bias</li>
-                    </ul>
                 </div>
 
-                <div class="bg-slatebg p-8 rounded-3xl border border-slate-200">
-                    <h3 class="text-lg font-bold text-darknavy mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-fingerprint text-primary"></i>
-                        <span>Plagiarism Screening & Retraction</span>
-                    </h3>
-                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                        Zero tolerance for academic dishonesty or uncredited attribution. Any manuscript exhibiting data falsification, duplicate submission, or uncredited reproduction will be immediately rejected or retracted.
+                <div class="p-7 rounded-3xl bg-slatebg border border-slateborder">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-xs border border-slateborder flex items-center justify-center text-emerald-600 text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="font-bold text-darknavy text-base mb-2">NDA & Full Intellectual Security</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Your research data, methodologies, and synopses remain your 100% intellectual property. We sign binding institutional Non-Disclosure Agreements prior to manuscript receipt.
                     </p>
-                    <ul class="text-xs text-slate-600 space-y-2">
-                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Automated similarity index verification</li>
-                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Crossref permanent DOI retraction tracking</li>
-                    </ul>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slatebg border border-slateborder">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-xs border border-slateborder flex items-center justify-center text-blue-600 text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-darknavy text-base mb-2">Zero Predatory Journals</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        We actively vet indexing databases, ISSN histories, and editorial board authenticity to shield scholars from predatory publishers and deceptive conference proceedings.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slatebg border border-slateborder">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-xs border border-slateborder flex items-center justify-center text-purple-600 text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="font-bold text-darknavy text-base mb-2">Guaranteed On-Time Delivery</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        We respect doctoral defense milestones and university submission cut-offs with stringent phase-wise milestone delivery schedules.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slatebg border border-slateborder">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-xs border border-slateborder flex items-center justify-center text-amber-600 text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                    </div>
+                    <h3 class="font-bold text-darknavy text-base mb-2">Transparent Institutional Pricing</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Straightforward milestone-based invoicing with zero hidden charges. Flexible payment terms structured for PhD scholars, assistant professors, and research grants.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-3xl bg-slatebg border border-slateborder">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-xs border border-slateborder flex items-center justify-center text-whatsapp text-xl mb-4 font-bold">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-bold text-darknavy text-base mb-2">Direct WhatsApp Advisory</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Real-time status updates and direct technical coordination via WhatsApp so you never face communication lag with handling editors.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-darknavy text-white py-16 border-t border-slate-800">
+    <!-- Genuine Indian Researcher Testimonials -->
+    <section id="testimonials" class="py-20 bg-slatebg border-t border-b border-slateborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="space-y-4 md:col-span-1">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-lg">AS</div>
-                        <span class="text-xl font-extrabold tracking-tight">AS Research Pub</span>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    Social Proof & Endorsements
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Trusted by Faculty & PhD Scholars Across India</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    Read genuine testimonials from researchers affiliated with premier Indian institutes who benefited from our consultancy.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1: IIT Kanpur -->
+                <div class="bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-2 font-mono">Scopus Q1 Accepted</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6 italic">
+                            "The statistical analysis and structural equation modeling (SEM) guidance provided by AS Research Pub was instrumental for our additive manufacturing manuscript. Their team helped resolve complex reviewer queries with mathematical rigor. Published in an Elsevier journal within 4 months."
+                        </p>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        An open-access academic publishing portal dedicated to disseminating peer-reviewed research and scholarly articles globally.
-                    </p>
-                    <p class="text-xs text-slate-500 font-mono">ISSN: 2583-XXXX • CrossRef Member</p>
+                    <div class="pt-4 border-t border-slateborder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-bold text-xs">
+                            RM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-darknavy">Dr. Rajesh K. Mishra</h4>
+                            <p class="text-[11px] text-slate-500">Associate Professor, Mechanical Engg.</p>
+                            <p class="text-[10px] text-primary font-semibold">IIT Kanpur, Uttar Pradesh</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Quick Links</h4>
-                    <ul class="space-y-2 text-xs text-slate-400">
-                        <li><a href="#journals" class="hover:text-white transition">Journals Archive</a></li>
-                        <li><a href="#articles" class="hover:text-white transition">Latest Publications</a></li>
-                        <li><a href="#submit" class="hover:text-white transition">Submit Manuscript</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition">APC & Payment</a></li>
-                        <li><a href="#guidelines" class="hover:text-white transition">Author Guidelines</a></li>
-                    </ul>
+
+                <!-- Testimonial 2: BHU Varanasi -->
+                <div class="bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-2 font-mono">SCI Indexed Publication</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6 italic">
+                            "Our molecular biology review paper had high Turnitin overlap in the methodology section. AS Research Pub’s technical team restructured the concepts manually without losing scientific substance. The paper was accepted in a Springer Nature SCI journal without any desk revisions."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xs">
+                            AS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-darknavy">Dr. Ananya Sharma</h4>
+                            <p class="text-[11px] text-slate-500">Postdoctoral Research Fellow, Biotechnology</p>
+                            <p class="text-[10px] text-primary font-semibold">Banaras Hindu University (BHU), Varanasi</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Policies</h4>
-                    <ul class="space-y-2 text-xs text-slate-400">
-                        <li><a href="#ethics" class="hover:text-white transition">Peer Review Process</a></li>
-                        <li><a href="#ethics" class="hover:text-white transition">Plagiarism Policy</a></li>
-                        <li><a href="#ethics" class="hover:text-white transition">Open Access License</a></li>
-                        <li><a href="#ethics" class="hover:text-white transition">Publication Ethics</a></li>
-                    </ul>
+
+                <!-- Testimonial 3: HBTU Kanpur -->
+                <div class="bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-2 font-mono">PhD Thesis Synopsis Defended</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6 italic">
+                            "As a working doctoral scholar, chapterizing my PhD thesis while managing teaching duties was daunting. The consultants at AS Research Pub Kanpur provided thorough chapter-by-chapter structuring and PRISMA systematic mapping. Passed my thesis viva seamlessly!"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">
+                            VS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-darknavy">Er. Vikramaditya Singh</h4>
+                            <p class="text-[11px] text-slate-500">PhD Research Scholar, Computer Science</p>
+                            <p class="text-[10px] text-primary font-semibold">HBTU, Kanpur, Uttar Pradesh</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Contact & Support</h4>
-                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope mr-2 text-primary"></i> support@asresearchpub.org</p>
-                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-globe mr-2 text-primary"></i> www.asresearchpub.org</p>
-                    <p class="text-xs text-slate-400"><i class="fa-solid fa-clock mr-2 text-primary"></i> Mon - Sat: 9:00 AM - 6:00 PM IST</p>
+
+                <!-- Testimonial 4: IIM Lucknow -->
+                <div class="bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-2 font-mono">ABDC-A Listed Journal</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6 italic">
+                            "For empirical management papers, econometric validation is paramount. AS Research Pub handled our panel data estimation and robust standard error testing with precision. Their editorial team communicated effortlessly over WhatsApp at every step."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">
+                            SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-darknavy">Dr. Sneha Mukherjee</h4>
+                            <p class="text-[11px] text-slate-500">Assistant Professor, Financial Economics</p>
+                            <p class="text-[10px] text-primary font-semibold">IIM Lucknow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5: CSIR - CDRI -->
+                <div class="bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-2 font-mono">IEEE Xplore Indexed</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6 italic">
+                            "Their bibliometric analysis support using VOSviewer produced exceptional co-authorship and keyword density visualizations. Highly professional team with deep academic background. I routinely recommend their Kanpur desk to my junior researchers."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">
+                            AS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-darknavy">Dr. Amitav Sengupta</h4>
+                            <p class="text-[11px] text-slate-500">Senior Scientist, Materials & Drug Delivery</p>
+                            <p class="text-[10px] text-primary font-semibold">CSIR - Central Drug Research Institute</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6: AKTU / Engineering Faculty -->
+                <div class="bg-white p-7 rounded-3xl border border-slateborder shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-amber-400 text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-2 font-mono">UGC-CARE Gr-II Published</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed mb-6 italic">
+                            "Navigating the UGC-CARE list without falling prey to cloned journals was our primary concern. AS Research Pub verified the journal's authenticity, assisted with IEEE formatting, and ensured genuine DOI generation. Extremely trustworthy!"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slateborder flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs">
+                            PV
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-darknavy">Prof. Pradeep Verma</h4>
+                            <p class="text-[11px] text-slate-500">Department of Electrical Engineering</p>
+                            <p class="text-[10px] text-primary font-semibold">Dr. A.P.J. Abdul Kalam Technical University (AKTU)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-                &copy; 2026 AS Research Pub. All rights reserved. Published under Open Access Creative Commons CC-BY 4.0 License.
+        </div>
+    </section>
+
+    <!-- Comprehensive Consultation Intake Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left: Kanpur Office & Institutional Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                        Official Liaison
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-darknavy">Get in Touch with our Kanpur Advisory Office</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We encourage scholars and university faculty to connect with our editorial desk for an unbiased diagnostic assessment of their research papers, theses, or statistical projects.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="p-4 bg-slatebg rounded-2xl border border-slateborder flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-building text-base"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Kanpur Office Address</h4>
+                                <p class="text-xs text-slate-600 mt-1">
+                                    AS Research Pub (Consulting & Publications Division)<br>
+                                    Civil Lines / Kalyanpur Institutional Zone,<br>
+                                    Kanpur, Uttar Pradesh — 208001, India
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slatebg rounded-2xl border border-slateborder flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Direct WhatsApp Advisory</h4>
+                                <p class="text-xs text-slate-600 mt-1">+91 94500 00000 (Mon – Sat: 9:30 AM to 7:00 PM IST)</p>
+                                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20consultancy%20support." target="_blank" class="text-xs text-primary font-bold hover:underline mt-1 inline-block">
+                                    Open WhatsApp Web &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slatebg rounded-2xl border border-slateborder flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope text-base"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Official Email Desks</h4>
+                                <p class="text-xs text-slate-600 mt-1">
+                                    Consulting: <span class="font-mono text-darknavy font-semibold">contact@asresearchpub.com</span><br>
+                                    Editorial Desk: <span class="font-mono text-darknavy font-semibold">support@asresearchpub.com</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Comprehensive Consultation Booking Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slatebg p-8 sm:p-10 rounded-3xl border border-slateborder shadow-sm">
+                        <h3 class="text-2xl font-bold text-darknavy mb-2">Schedule Research Consultation</h3>
+                        <p class="text-xs text-slate-500 mb-6">Fill in your requirements for a comprehensive review and customized milestone proposal.</p>
+
+                        <form onsubmit="handleContactSubmission(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Scholar Full Name *</label>
+                                    <input type="text" required placeholder="Dr. / Scholar Name" class="w-full bg-white border border-slateborder rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">WhatsApp Mobile Number *</label>
+                                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-white border border-slateborder rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Institutional Email *</label>
+                                    <input type="email" required placeholder="name@university.ac.in" class="w-full bg-white border border-slateborder rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">University / Institute Name</label>
+                                    <input type="text" placeholder="e.g. IIT Kanpur, HBTU, DU, BHU..." class="w-full bg-white border border-slateborder rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Service Required *</label>
+                                    <select required class="w-full bg-white border border-slateborder rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                                        <option value="Publication Services (Scopus, SCI, UGC)">Publication Services (Scopus, SCI, UGC)</option>
+                                        <option value="Academic Writing Support">Academic Writing Support</option>
+                                        <option value="Thesis & Dissertation Support">Thesis & Dissertation Support</option>
+                                        <option value="Data & Statistical Analysis">Data & Statistical Analysis (SPSS/R)</option>
+                                        <option value="SLR & Bibliometric Analysis">SLR & Bibliometric Analysis (PRISMA)</option>
+                                        <option value="Plagiarism Reduction & Paraphrasing">Plagiarism Reduction & Paraphrasing</option>
+                                        <option value="Editing & Proofreading">Editing & Proofreading</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Expected Completion Deadline</label>
+                                    <input type="date" class="w-full bg-white border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Manuscript Title or Research Objectives</label>
+                                <textarea rows="3" placeholder="Briefly describe your research domain, target journal quartile, or current stage of work..." class="w-full bg-white border border-slateborder rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition"></textarea>
+                            </div>
+
+                            <div class="p-3 bg-white rounded-xl border border-slateborder text-xs text-slate-500 flex items-center gap-2">
+                                <i class="fa-solid fa-lock text-emerald-600"></i>
+                                <span>NDA Protected: Your information and research files will never be shared with third parties.</span>
+                            </div>
+
+                            <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-3.5 rounded-xl shadow-md transition text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                                <span>Submit Confidential Consultation Request</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ) Section -->
+    <section id="faq" class="py-20 bg-slatebg border-t border-slateborder">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                    Transparent Information
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Frequently Asked Questions</h2>
+                <p class="text-slate-600 text-sm mt-2">Clear answers regarding our consultancy protocols, indexing verification, and confidentiality.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white border border-slateborder rounded-2xl p-5 shadow-xs">
+                    <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between font-bold text-darknavy text-sm sm:text-base text-left">
+                        <span>How does AS Research Pub verify authentic Scopus and UGC-CARE journals?</span>
+                        <i id="faqIcon1" class="fa-solid fa-chevron-down text-primary transition-transform duration-200"></i>
+                    </button>
+                    <div id="faqContent1" class="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slateborder">
+                        Our research desk checks active indexing on Scopus Sources (Elsevier), Web of Science Master Journal List, and the official UGC-CARE portal using active ISSNs, publisher archives, and Discontinued Journal databases to protect scholars from cloned or hijacked journals.
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slateborder rounded-2xl p-5 shadow-xs">
+                    <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between font-bold text-darknavy text-sm sm:text-base text-left">
+                        <span>How is confidentiality and my intellectual property preserved?</span>
+                        <i id="faqIcon2" class="fa-solid fa-chevron-down text-primary transition-transform duration-200"></i>
+                    </button>
+                    <div id="faqContent2" class="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slateborder">
+                        All research manuscripts, data sheets, and thesis synopses are legally protected under a formal institutional Non-Disclosure Agreement (NDA). Authors retain 100% intellectual property rights, copyrights, and authorship.
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slateborder rounded-2xl p-5 shadow-xs">
+                    <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between font-bold text-darknavy text-sm sm:text-base text-left">
+                        <span>What is your typical turnaround timeline for Turnitin plagiarism reduction?</span>
+                        <i id="faqIcon3" class="fa-solid fa-chevron-down text-primary transition-transform duration-200"></i>
+                    </button>
+                    <div id="faqContent3" class="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slateborder">
+                        Standard plagiarism reduction takes between 24 to 72 hours depending on manuscript word count. Our subject specialists perform manual conceptual rewriting without reliance on automated spinners, maintaining technical rigor with similarity brought strictly below 10%.
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slateborder rounded-2xl p-5 shadow-xs">
+                    <button onclick="toggleFaq(4)" class="w-full flex items-center justify-between font-bold text-darknavy text-sm sm:text-base text-left">
+                        <span>Can I coordinate directly via WhatsApp for urgent milestones?</span>
+                        <i id="faqIcon4" class="fa-solid fa-chevron-down text-primary transition-transform duration-200"></i>
+                    </button>
+                    <div id="faqContent4" class="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slateborder">
+                        Yes! We maintain a dedicated WhatsApp coordination desk for ongoing scholars, allowing seamless file sharing, rapid milestone notifications, and real-time status updates without procedural email delays.
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slateborder rounded-2xl p-5 shadow-xs">
+                    <button onclick="toggleFaq(5)" class="w-full flex items-center justify-between font-bold text-darknavy text-sm sm:text-base text-left">
+                        <span>What software packages do you support for statistical analysis?</span>
+                        <i id="faqIcon5" class="fa-solid fa-chevron-down text-primary transition-transform duration-200"></i>
+                    </button>
+                    <div id="faqContent5" class="hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slateborder">
+                        We support IBM SPSS Statistics, R programming, Python (NumPy/Pandas/Scikit-Learn), SmartPLS (PLS-SEM), AMOS (CB-SEM), STATA, and NVivo for qualitative thematic coding.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Footer -->
+    <footer class="bg-darknavy text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: Institutional Identity -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-base">
+                            AS
+                        </div>
+                        <span class="text-lg font-extrabold tracking-tight">AS Research Pub</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Kanpur-based institutional academic consultancy firm assisting research scholars, university faculty, and scientists in high-impact publishing, thesis completion, and empirical statistical computing.
+                    </p>
+                    <div class="text-[11px] text-slate-500 space-y-1 font-mono">
+                        <div>HQ: Kanpur, Uttar Pradesh, India</div>
+                        <div>Adherence: COPE Guidelines & Turnitin Protocols</div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Services Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Consultancy Portfolio</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#services" class="hover:text-white transition">Academic Writing Support</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Publication Services (Scopus, SCI)</a></li>
+                        <li><a href="#services" class="hover:text-white transition">PhD Thesis & Synopsis Guidance</a></li>
+                        <li><a href="#services" class="hover:text-white transition">SLR & Bibliometric Analysis</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Data & Statistical Modeling</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Plagiarism Reduction (&lt;10%)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Research Standards -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Scholarly Standards</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><span class="text-slate-300 font-semibold">Indexing:</span> Scopus, SCI/SCIE, UGC-CARE</li>
+                        <li><span class="text-slate-300 font-semibold">Referencing:</span> IEEE, APA 7th, Harvard, Vancouver</li>
+                        <li><span class="text-slate-300 font-semibold">Software:</span> SPSS, SmartPLS, R, VOSviewer</li>
+                        <li><span class="text-slate-300 font-semibold">Ethics:</span> Committee on Publication Ethics (COPE)</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Kanpur Liaison & WhatsApp -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Kanpur Liaison Desk</h4>
+                    <p class="text-xs text-slate-400 mb-2">Civil Lines / Kalyanpur Institutional Area, Kanpur, UP — 208001</p>
+                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-envelope mr-1.5 text-primary"></i> contact@asresearchpub.com</p>
+                    <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20consultancy%20support." target="_blank" class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsappHover text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WhatsApp Coordination</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 AS Research Pub. Professional Academic Research & Publishing Consultancy, Kanpur, India. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#about" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#about" class="hover:text-white transition">Terms of Consultancy</a>
+                    <a href="#about" class="hover:text-white transition">NDA Statement</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Chatbot Widget -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <div id="chatWindow" class="hidden w-80 sm:w-96 bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden mb-4 flex flex-col">
-            <div class="bg-darknavy text-white p-4 flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span class="font-bold text-sm">Research Assistant</span>
-                </div>
-                <button onclick="toggleChat()" class="text-slate-400 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div id="chatMessages" class="p-4 h-64 overflow-y-auto space-y-3 text-xs bg-slatebg">
-                <div class="bg-white p-3 rounded-2xl shadow-xs border border-slate-200 text-slate-700 max-w-[85%]">
-                    Hello! Welcome to AS Research Pub. How can I help you find a journal, check APC fees, or submit your manuscript today?
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2">
-                <input type="text" id="chatInput" onkeydown="if(event.key==='Enter') sendMessage()" placeholder="Ask about submission, APC, DOI..." class="flex-1 bg-slate-100 border border-slate-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-primary">
-                <button onclick="sendMessage()" class="bg-primary text-white px-4 py-2 rounded-xl text-xs font-semibold hover:bg-blue-700 transition">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-        <button onclick="toggleChat()" class="w-14 h-14 bg-primary hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center text-xl transition transform hover:scale-105" aria-label="Open Assistant">
-            <i class="fa-solid fa-robot"></i>
-        </button>
+    <!-- Floating Interactive WhatsApp & Consultation Quick Bar -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20urgent%20academic%20research%20and%20publishing%20assistance." target="_blank" class="w-14 h-14 bg-whatsapp hover:bg-whatsappHover text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110 relative group" aria-label="Direct WhatsApp Contact">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="absolute right-16 bg-darknavy text-white text-xs font-semibold px-3 py-1 rounded-xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                Direct WhatsApp Advisory
+            </span>
+        </a>
     </div>
 
-    <!-- Paper Preview Modal -->
-    <div id="paperModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
-            <button onclick="closePaperModal()" class="absolute top-6 right-6 text-slate-400 hover:text-darknavy text-xl">
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl border border-slateborder max-h-[92vh] overflow-y-auto">
+            <button onclick="closeConsultationModal()" class="absolute top-6 right-6 text-slate-400 hover:text-darknavy text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div id="paperModalContent"></div>
+            <div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-1">
+                <i class="fa-solid fa-calendar-check"></i> Advisory Booking
+            </div>
+            <h3 class="text-xl font-bold text-darknavy mb-1" id="modalServiceTitle">Book Academic Consultation</h3>
+            <p class="text-xs text-slate-500 mb-6">Our Kanpur research team will review your requirements and respond via WhatsApp within 4 hours.</p>
+
+            <form onsubmit="handleModalSubmission(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Your Full Name *</label>
+                    <input type="text" required id="modalName" placeholder="Dr. / Scholar Name" class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">WhatsApp Number *</label>
+                        <input type="tel" required id="modalPhone" placeholder="+91 XXXXX XXXXX" class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email Address *</label>
+                        <input type="email" required id="modalEmail" placeholder="scholar@univ.ac.in" class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Selected Consultancy Service</label>
+                    <input type="text" id="modalServiceInput" readonly class="w-full bg-slate-100 border border-slateborder rounded-xl px-4 py-2.5 text-sm font-semibold text-darknavy">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Research Domain & Specific Requirements</label>
+                    <textarea rows="3" required placeholder="Specify your paper topic, target deadline, or current stage..." class="w-full bg-slatebg border border-slateborder rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition"></textarea>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button type="submit" class="flex-grow bg-primary hover:bg-primaryHover text-white py-3 rounded-xl font-bold text-xs transition shadow flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Confirm Consultation Request</span>
+                    </button>
+                    <button type="button" onclick="closeConsultationModal()" class="px-5 bg-slate-100 text-slate-700 py-3 rounded-xl font-semibold text-xs hover:bg-slate-200 transition">
+                        Cancel
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
-    <!-- Notification Toast -->
+    <!-- Toast Notification -->
     <div id="toast" class="hidden fixed bottom-6 left-6 z-50 bg-darknavy text-white px-5 py-3 rounded-2xl shadow-xl text-xs sm:text-sm font-medium flex items-center gap-3 border border-slate-700 transition-all">
         <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-        <span id="toastMsg">Action completed successfully.</span>
+        <span id="toastMsg">Consultation request registered successfully.</span>
     </div>
 
-    <!-- Script Interactions -->
+    <!-- Script Logic -->
     <script>
-        // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobileMenuBtn');
+        // Mobile Menu Drawer
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         function toggleMobileMenu() {
             mobileMenu.classList.toggle('hidden');
         }
-        mobileBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
-        // Toast Notification Helper
+        // Toast Helper
         function showToast(message) {
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toastMsg');
@@ -637,114 +1114,61 @@
             toast.classList.remove('hidden');
             setTimeout(() => {
                 toast.classList.add('hidden');
-            }, 3500);
+            }, 4000);
         }
 
-        // Chat Widget Toggle
-        function toggleChat() {
-            const chatWindow = document.getElementById('chatWindow');
-            chatWindow.classList.toggle('hidden');
-            if(!chatWindow.classList.contains('hidden')) {
-                setTimeout(() => document.getElementById('chatInput')?.focus(), 100);
-            }
+        // FAQ Accordion
+        function toggleFaq(num) {
+            const content = document.getElementById(`faqContent${num}`);
+            const icon = document.getElementById(`faqIcon${num}`);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
         }
 
-        // Chat Message Sender
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const messages = document.getElementById('chatMessages');
-            const val = input.value.trim();
-            if(!val) return;
-
-            const userMsg = document.createElement('div');
-            userMsg.className = 'bg-primary text-white p-3 rounded-2xl shadow-xs max-w-[85%] ml-auto leading-relaxed';
-            userMsg.textContent = val;
-            messages.appendChild(userMsg);
-
-            const query = val.toLowerCase();
-            input.value = '';
-            messages.scrollTop = messages.scrollHeight;
-
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'bg-white p-3 rounded-2xl shadow-xs border border-slate-200 text-slate-700 max-w-[85%] leading-relaxed';
-                
-                if(query.includes('fee') || query.includes('apc') || query.includes('price') || query.includes('cost')) {
-                    botMsg.textContent = "Our Article Processing Charge (APC) is ₹1,500 for Indian researchers (Standard), ₹2,500 for Fast-Track (48-hour decision), and $50 USD for International authors.";
-                } else if(query.includes('submit') || query.includes('paper') || query.includes('upload')) {
-                    botMsg.textContent = "You can submit your paper directly using the 'Submit Manuscript' section on this page by providing author credentials and attaching your PDF or DOCX file.";
-                } else if(query.includes('doi') || query.includes('crossref')) {
-                    botMsg.textContent = "Yes, all accepted and published articles are registered with permanent CrossRef DOIs for persistent academic indexing and citation tracking.";
-                } else if(query.includes('time') || query.includes('review') || query.includes('duration')) {
-                    botMsg.textContent = "Standard peer review takes approximately 7 to 14 days. Fast-track peer review is completed within 48 hours.";
-                } else {
-                    botMsg.textContent = "Thank you for your inquiry. For detailed editorial assistance, you can email our support desk at support@asresearchpub.org.";
-                }
-                messages.appendChild(botMsg);
-                messages.scrollTop = messages.scrollHeight;
-            }, 550);
+        // Consultation Modal Logic
+        function openConsultationModal(serviceName) {
+            document.getElementById('modalServiceTitle').textContent = `Book Consultation: ${serviceName}`;
+            document.getElementById('modalServiceInput').value = serviceName;
+            document.getElementById('consultationModal').classList.remove('hidden');
         }
 
-        // Search Action
-        function handleSearch() {
-            const keyword = document.getElementById('searchInput').value.trim();
-            const field = document.getElementById('fieldSelect').value;
-            if(!keyword && !field) {
-                showToast('Please enter a keyword or select a field.');
-                return;
-            }
-            showToast(`Found 12 matching articles for "${keyword || field}". Displaying results...`);
-            document.getElementById('articles')?.scrollIntoView({ behavior: 'smooth' });
+        function closeConsultationModal() {
+            document.getElementById('consultationModal')?.classList.add('hidden');
         }
 
-        // Submission Action
-        function handleSubmission(e) {
+        function handleHeroConsultation(e) {
             e.preventDefault();
-            const id = 'AS-2026-' + Math.floor(1000 + Math.random() * 9000);
-            showToast(`Manuscript submitted successfully! Your tracking ID is ${id}.`);
+            const name = document.getElementById('heroName').value;
+            const phone = document.getElementById('heroPhone').value;
+            const service = document.getElementById('heroService').value;
+            
+            showToast(`Thank you, ${name}! Your inquiry for "${service}" has been assigned to our Kanpur desk. We will reach you on WhatsApp (${phone}) shortly.`);
             e.target.reset();
         }
 
-        function preselectJournal(val) {
-            const sel = document.getElementById('subJournal');
-            if(sel) sel.value = val;
+        function handleModalSubmission(e) {
+            e.preventDefault();
+            const name = document.getElementById('modalName').value;
+            const phone = document.getElementById('modalPhone').value;
+            const service = document.getElementById('modalServiceInput').value;
+
+            closeConsultationModal();
+            showToast(`Consultation registered for ${name}! Our senior consultant will contact you via WhatsApp (${phone}) regarding ${service}.`);
+            e.target.reset();
         }
 
-        // Paper Preview & Citation
-        function openPaperPreview(title, doi) {
-            const modal = document.getElementById('paperModal');
-            const content = document.getElementById('paperModalContent');
-            content.innerHTML = `
-                <span class="text-xs font-bold px-3 py-1 bg-blue-50 text-primary rounded-full border border-blue-100">Peer-Reviewed Paper</span>
-                <h3 class="text-xl font-bold text-darknavy mt-3 mb-1">${title}</h3>
-                <p class="text-xs text-slate-500 font-mono mb-4">DOI: ${doi} • Open Access CC-BY 4.0</p>
-                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs text-slate-700 mb-6 leading-relaxed">
-                    <strong>Abstract:</strong> This research paper has been accepted following rigorous double-blind peer review. Full quantitative methodologies, experimental datasets, and source code are openly accessible under the Creative Commons license.
-                </div>
-                <div class="flex gap-3">
-                    <button onclick="showToast('Downloading full-text PDF...'); closePaperModal();" class="flex-grow bg-primary text-white py-3 rounded-xl font-semibold text-xs hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-download mr-1"></i> Download PDF
-                    </button>
-                    <button onclick="closePaperModal()" class="px-6 bg-slate-100 text-slate-700 py-3 rounded-xl font-semibold text-xs hover:bg-slate-200 transition">
-                        Close
-                    </button>
-                </div>
-            `;
-            modal.classList.remove('hidden');
+        function handleContactSubmission(e) {
+            e.preventDefault();
+            showToast('Confidential inquiry dispatched successfully to AS Research Pub Kanpur office. A consultant will review your specifications within 4 hours.');
+            e.target.reset();
         }
 
-        function closePaperModal() {
-            document.getElementById('paperModal')?.classList.add('hidden');
-        }
-
-        function copyCitation(title, author, doi) {
-            const cite = `${author}. "${title}." AS Research Pub, 2026. https://doi.org/${doi}`;
-            navigator.clipboard.writeText(cite).then(() => {
-                showToast('Citation copied to clipboard!');
-            }).catch(() => {
-                showToast(`Citation: ${cite}`);
-            });
-        }
+        // Close modal on ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeConsultationModal();
+            }
+        });
     </script>
 </body>
 </html>
