@@ -62,13 +62,17 @@
                 <span class="hidden md:inline text-slate-400">|</span>
                 <span>Institutional Academic Research & Publication Consultancy Division</span>
             </div>
-            <div class="flex items-center gap-4 text-[11px] text-slate-300">
-                <a href="mailto:contact@asresearchpub.com" class="hover:text-white transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-envelope text-blue-400"></i> contact@asresearchpub.com
+            <div class="flex items-center gap-3 text-[11px] text-slate-300">
+                <span class="hidden sm:inline text-slate-400">
+                    <i class="fa-regular fa-clock text-blue-400 mr-1"></i> Mon – Sat: 9:30 AM to 7:00 PM IST
+                </span>
+                <span class="hidden sm:inline text-slate-600">•</span>
+                <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20academic%20research%20and%20publication%20consultancy%20support." target="_blank" class="text-whatsapp font-semibold hover:text-emerald-400 transition flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> +91 81718 20009
                 </a>
-                <span class="text-slate-600">•</span>
-                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20academic%20research%20and%20publication%20consultancy%20support." target="_blank" class="text-whatsapp font-semibold hover:text-emerald-400 transition flex items-center gap-1">
-                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Support
+                <a href="https://web.whatsapp.com/send?phone=918171820009&text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20academic%20research%20and%20publication%20consultancy%20support." target="_blank" class="hidden md:inline-flex items-center gap-1 text-[10px] bg-slate-800 hover:bg-slate-700 text-slate-200 px-2 py-0.5 rounded border border-slate-700 transition">
+                    <span>Open WhatsApp Web</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
                 </a>
             </div>
         </div>
@@ -101,7 +105,7 @@
 
             <!-- Action Controls: WhatsApp & Consultation CTA -->
             <div class="hidden md:flex items-center space-x-3">
-                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20expert%20academic%20research%20support." target="_blank" class="bg-whatsapp hover:bg-whatsappHover text-white px-4 py-2.5 rounded-xl font-bold text-xs shadow-xs transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20expert%20academic%20research%20support." target="_blank" class="bg-whatsapp hover:bg-whatsappHover text-white px-4 py-2.5 rounded-xl font-bold text-xs shadow-xs transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
                     <i class="fa-brands fa-whatsapp text-base"></i>
                     <span>WhatsApp Connect</span>
                 </a>
@@ -113,7 +117,7 @@
 
             <!-- Mobile Menu Toggle Button -->
             <div class="lg:hidden flex items-center space-x-2">
-                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="bg-whatsapp text-white p-2 rounded-lg text-sm" aria-label="WhatsApp">
+                <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="bg-whatsapp text-white p-2 rounded-lg text-sm" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
                 <button id="mobileMenuBtn" class="p-2 text-slate-700 hover:text-darknavy rounded-lg focus:outline-none" aria-label="Toggle navigation">
@@ -132,8 +136,11 @@
             <a href="#faq" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">FAQ</a>
             <a href="#contact" class="block hover:text-primary py-1.5" onclick="toggleMobileMenu()">Contact</a>
             <div class="pt-3 border-t border-slateborder flex flex-col gap-2">
-                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="w-full text-center bg-whatsapp text-white py-3 rounded-xl font-bold text-xs shadow-xs flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Connect
+                <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="w-full text-center bg-whatsapp text-white py-3 rounded-xl font-bold text-xs shadow-xs flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Connect (+91 81718 20009)
+                </a>
+                <a href="https://web.whatsapp.com/send?phone=918171820009&text=Hello%20AS%20Research%20Pub%2C%20I%20need%20research%20consultancy%20assistance." target="_blank" class="w-full text-center bg-slate-800 text-slate-200 py-2.5 rounded-xl font-semibold text-xs border border-slate-700 flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i> Open WhatsApp Web
                 </a>
                 <button onclick="openConsultationModal('General Inquiry'); toggleMobileMenu();" class="w-full text-center bg-primary text-white py-3 rounded-xl font-bold text-xs shadow-xs">
                     Book Consultation
@@ -162,14 +169,18 @@
                     </p>
 
                     <!-- CTA Group -->
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <button onclick="openConsultationModal('Research Proposal & Paper Support')" class="bg-primary hover:bg-primaryHover text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20 transition-all flex items-center space-x-2 transform hover:-translate-y-0.5">
+                    <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                        <button onclick="openConsultationModal('Research Proposal & Paper Support')" class="bg-primary hover:bg-primaryHover text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20 transition-all flex items-center space-x-2 transform hover:-translate-y-0.5 text-sm">
                             <span>Get Free Research Evaluation</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
-                        <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20want%20to%20discuss%20my%20academic%20paper%20consultation." target="_blank" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold px-6 py-3.5 rounded-xl transition-all flex items-center gap-2">
+                        <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20want%20to%20discuss%20my%20academic%20paper%20consultation." target="_blank" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold px-5 py-3.5 rounded-xl transition-all flex items-center gap-2 text-sm">
                             <i class="fa-brands fa-whatsapp text-whatsapp text-lg"></i>
                             <span>Chat on WhatsApp</span>
+                        </a>
+                        <a href="https://web.whatsapp.com/send?phone=918171820009&text=Hello%20AS%20Research%20Pub%2C%20I%20want%20to%20discuss%20my%20academic%20paper%20consultation." target="_blank" class="hidden sm:inline-flex bg-slate-50 hover:bg-slate-100 border border-slate-300 text-slate-700 font-semibold px-4 py-3.5 rounded-xl transition-all items-center gap-1.5 text-xs">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-emerald-600"></i>
+                            <span>Open WhatsApp Web</span>
                         </a>
                     </div>
 
@@ -792,9 +803,8 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Kanpur Office Address</h4>
-                                <p class="text-xs text-slate-600 mt-1">
+                                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
                                     AS Research Pub (Consulting & Publications Division)<br>
-                                    Civil Lines / Kalyanpur Institutional Zone,<br>
                                     Kanpur, Uttar Pradesh — 208001, India
                                 </p>
                             </div>
@@ -806,22 +816,29 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Direct WhatsApp Advisory</h4>
-                                <p class="text-xs text-slate-600 mt-1">+91 94500 00000 (Mon – Sat: 9:30 AM to 7:00 PM IST)</p>
-                                <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20consultancy%20support." target="_blank" class="text-xs text-primary font-bold hover:underline mt-1 inline-block">
-                                    Open WhatsApp Web &rarr;
-                                </a>
+                                <p class="text-sm font-bold text-darknavy mt-1">+91 81718 20009</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Mon – Sat: 9:30 AM to 7:00 PM IST</p>
+                                <div class="flex items-center gap-3 mt-2.5">
+                                    <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20consultancy%20support." target="_blank" class="text-xs text-primary font-bold hover:underline flex items-center gap-1">
+                                        <span>Direct WhatsApp</span> &rarr;
+                                    </a>
+                                    <span class="text-slate-300">|</span>
+                                    <a href="https://web.whatsapp.com/send?phone=918171820009&text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20consultancy%20support." target="_blank" class="text-xs text-emerald-700 font-bold hover:underline flex items-center gap-1">
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                        <span>Open WhatsApp Web</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <div class="p-4 bg-slatebg rounded-2xl border border-slateborder flex items-start gap-4">
                             <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-envelope text-base"></i>
+                                <i class="fa-solid fa-shield-halved text-base"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Official Email Desks</h4>
-                                <p class="text-xs text-slate-600 mt-1">
-                                    Consulting: <span class="font-mono text-darknavy font-semibold">contact@asresearchpub.com</span><br>
-                                    Editorial Desk: <span class="font-mono text-darknavy font-semibold">support@asresearchpub.com</span>
+                                <h4 class="font-bold text-darknavy text-xs uppercase tracking-wider">Institutional Advisory Standards</h4>
+                                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                    Full intellectual confidentiality guaranteed under binding non-disclosure agreements (NDAs). Initial paper evaluation reports delivered within <strong>4 hours</strong>.
                                 </p>
                             </div>
                         </div>
@@ -1011,12 +1028,24 @@
                 <!-- Col 4: Kanpur Liaison & WhatsApp -->
                 <div>
                     <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Kanpur Liaison Desk</h4>
-                    <p class="text-xs text-slate-400 mb-2">Civil Lines / Kalyanpur Institutional Area, Kanpur, UP — 208001</p>
-                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-envelope mr-1.5 text-primary"></i> contact@asresearchpub.com</p>
-                    <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20consultancy%20support." target="_blank" class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsappHover text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow">
-                        <i class="fa-brands fa-whatsapp text-sm"></i>
-                        <span>WhatsApp Coordination</span>
-                    </a>
+                    <p class="text-xs text-slate-400 mb-2 leading-relaxed">
+                        AS Research Pub (Consulting & Publications Division)<br>
+                        Kanpur, Uttar Pradesh — 208001, India
+                    </p>
+                    <p class="text-xs text-slate-300 font-semibold mb-1 flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-whatsapp text-sm"></i> +91 81718 20009
+                    </p>
+                    <p class="text-[11px] text-slate-400 mb-3">Mon – Sat: 9:30 AM to 7:00 PM IST</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://web.whatsapp.com/send?phone=918171820009&text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20academic%20research%20and%20publishing%20consultancy%20support." target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-whatsapp hover:bg-whatsappHover text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition shadow">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                            <span>Open WhatsApp Web</span>
+                        </a>
+                        <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20am%20looking%20for%20academic%20research%20and%20publishing%20consultancy%20support." target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3.5 py-2 rounded-xl border border-slate-700 transition">
+                            <i class="fa-brands fa-whatsapp text-whatsapp text-xs"></i>
+                            <span>Chat on WhatsApp Mobile</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -1032,12 +1061,18 @@
     </footer>
 
     <!-- Floating Interactive WhatsApp & Consultation Quick Bar -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2.5">
+        <!-- Floating WhatsApp Web Quick Pill -->
+        <a href="https://web.whatsapp.com/send?phone=918171820009&text=Hello%20AS%20Research%20Pub%2C%20I%20need%20urgent%20academic%20research%20and%20publishing%20assistance." target="_blank" class="hidden md:inline-flex items-center gap-1.5 bg-darknavy/90 hover:bg-darknavy text-white text-[11px] font-semibold py-1.5 px-3 rounded-full shadow-lg border border-slate-700 backdrop-blur-sm transition-all transform hover:-translate-y-0.5">
+            <i class="fa-brands fa-whatsapp text-whatsapp"></i>
+            <span>Open WhatsApp Web</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-slate-400"></i>
+        </a>
         <!-- Floating WhatsApp Button -->
-        <a href="https://wa.me/919450000000?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20urgent%20academic%20research%20and%20publishing%20assistance." target="_blank" class="w-14 h-14 bg-whatsapp hover:bg-whatsappHover text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110 relative group" aria-label="Direct WhatsApp Contact">
+        <a href="https://wa.me/918171820009?text=Hello%20AS%20Research%20Pub%2C%20I%20need%20urgent%20academic%20research%20and%20publishing%20assistance." target="_blank" class="w-14 h-14 bg-whatsapp hover:bg-whatsappHover text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110 relative group" aria-label="Direct WhatsApp Contact (+91 81718 20009)">
             <i class="fa-brands fa-whatsapp"></i>
             <span class="absolute right-16 bg-darknavy text-white text-xs font-semibold px-3 py-1 rounded-xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                Direct WhatsApp Advisory
+                WhatsApp: +91 81718 20009
             </span>
         </a>
     </div>
