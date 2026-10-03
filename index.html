@@ -38,9 +38,9 @@
             <span class="bg-[#C5ADC5] text-slate-900 text-xs px-2.5 py-0.5 rounded-full font-bold mr-2">Advisory Open</span> 
             Direct WhatsApp Support: <a href="https://wa.me/918171820009" target="_blank" class="underline font-bold hover:text-[#C5ADC5]">+91 81718 20009</a> (Mon–Sat: 9:30 AM to 7:00 PM IST)
         </div>
-        <button id="soundToggleBtn" onclick="toggleSound(event)" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400" title="Click to mute/unmute audio effects" aria-label="Toggle Sound Effects">
+        <button id="soundToggleBtn" onclick="cycleVolume(event)" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400" title="Click to cycle volume: 100% (High), 60% (Medium), Muted" aria-label="Sound Volume Controller">
             <i id="soundIcon" class="fa-solid fa-volume-high animate-pulse"></i>
-            <span id="soundStatusText">Sound: Active</span>
+            <span id="soundStatusText">Sound: 100% (Boosted)</span>
         </button>
     </div>
 
@@ -429,15 +429,16 @@
     </footer>
 
     <!-- Responsive Floating Sound Controller (Mobile & Desktop) -->
-    <div class="fixed bottom-5 left-5 z-40 sm:bottom-6 sm:left-6">
-        <button id="floatingSoundBtn" onclick="toggleSound(event)" class="bg-white/95 backdrop-blur-md border border-[#C5ADC5]/40 shadow-lg text-slate-800 text-xs font-bold px-3.5 py-2 rounded-full flex items-center space-x-2 hover:bg-slate-50 transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C5ADC5]" title="Toggle Audio Experience" aria-label="Toggle Audio Effects">
-            <span id="floatingSoundPulse" class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <i id="floatingSoundIcon" class="fa-solid fa-volume-high text-[#7E83C4]"></i>
-            <span id="floatingSoundText" class="text-[11px] font-semibold text-slate-700 hidden sm:inline">Audio On</span>
+    <div class="fixed bottom-5 left-5 z-40 sm:bottom-6 sm:left-6 flex items-center space-x-2">
+        <button id="floatingSoundBtn" onclick="cycleVolume(event)" class="bg-white/95 backdrop-blur-md border border-[#C5ADC5]/50 shadow-xl text-slate-800 text-xs font-bold px-3.5 py-2.5 rounded-full flex items-center space-x-2.5 hover:bg-slate-50 transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C5ADC5]" title="Click to cycle volume: 100% (High), 60% (Medium), Mute" aria-label="Toggle Sound Volume">
+            <span id="floatingSoundPulse" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+            <i id="floatingSoundIcon" class="fa-solid fa-volume-high text-[#7E83C4] text-sm"></i>
+            <span id="floatingSoundText" class="text-xs font-extrabold text-darknavy">100% Volume</span>
+            <span class="text-[10px] text-slate-500 font-semibold hidden md:inline border-l border-slate-200 pl-2">Boosted</span>
         </button>
     </div>
 
-    <!-- Responsive Web Audio API Script -->
+    <!-- Responsive Web Audio API Script (High Volume & Dynamic Controls) -->
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobileMenuBtn');
@@ -449,17 +450,27 @@
         }
 
         // ==========================================
-        // Responsive Web Audio API Engine
+        // Responsive Web Audio API Engine with Boosted Master Gain
         // ==========================================
         let audioCtx = null;
-        let isSoundActive = localStorage.getItem('as_sound_enabled') !== 'false';
+        let masterGainNode = null;
+        
+        // Volume levels: 1.0 (100% Boosted), 0.6 (60% Medium), 0.0 (Muted)
+        const volumeLevels = [1.0, 0.6, 0.0];
+        let currentVolume = parseFloat(localStorage.getItem('as_sound_volume'));
+        if (isNaN(currentVolume)) {
+            currentVolume = 1.0; // Default to 100% Boosted High Volume
+        }
 
-        // Unlock audio context instantly on user interaction (touch, click, key)
+        // Initialize AudioContext & Master Gain Node
         function initAudioContext() {
             if (!audioCtx) {
                 const AudioContextClass = window.AudioContext || window.webkitAudioContext;
                 if (AudioContextClass) {
                     audioCtx = new AudioContextClass();
+                    masterGainNode = audioCtx.createGain();
+                    masterGainNode.gain.setValueAtTime(currentVolume, audioCtx.currentTime);
+                    masterGainNode.connect(audioCtx.destination);
                 }
             }
             if (audioCtx && audioCtx.state === 'suspended') {
@@ -467,21 +478,21 @@
             }
         }
 
-        // Global low-latency unlock listeners
+        // Global low-latency unlock listeners on first interaction
         ['click', 'touchstart', 'pointerdown', 'keydown'].forEach(evt => {
             window.addEventListener(evt, () => initAudioContext(), { once: true, passive: true });
         });
 
-        // Lifecycle optimization: pause when tab hidden to save device battery
+        // Lifecycle optimization: pause audio processing when tab is in background
         document.addEventListener('visibilitychange', () => {
             if (document.hidden && audioCtx && audioCtx.state === 'running') {
                 audioCtx.suspend();
-            } else if (!document.hidden && audioCtx && audioCtx.state === 'suspended' && isSoundActive) {
+            } else if (!document.hidden && audioCtx && audioCtx.state === 'suspended' && currentVolume > 0) {
                 audioCtx.resume();
             }
         });
 
-        // Synchronize UI status across header and floating buttons
+        // Update UI status across header and floating buttons
         function updateSoundUI() {
             const soundIcon = document.getElementById('soundIcon');
             const soundStatusText = document.getElementById('soundStatusText');
@@ -490,44 +501,74 @@
             const floatingText = document.getElementById('floatingSoundText');
             const floatingPulse = document.getElementById('floatingSoundPulse');
 
-            if (isSoundActive) {
+            if (currentVolume >= 0.9) {
+                // 100% Boosted High Volume
                 if (soundIcon) soundIcon.className = "fa-solid fa-volume-high animate-pulse";
-                if (soundStatusText) soundStatusText.textContent = "Sound: Active";
+                if (soundStatusText) soundStatusText.textContent = "Sound: 100% (Boosted)";
                 if (soundToggleBtn) {
                     soundToggleBtn.className = "bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400";
                 }
-                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-high text-[#7E83C4]";
-                if (floatingText) floatingText.textContent = "Audio On";
-                if (floatingPulse) floatingPulse.className = "w-2 h-2 rounded-full bg-emerald-500 animate-ping";
+                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-high text-[#7E83C4] text-sm";
+                if (floatingText) floatingText.textContent = "100% Volume";
+                if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping";
+            } else if (currentVolume > 0) {
+                // 60% Medium Volume
+                if (soundIcon) soundIcon.className = "fa-solid fa-volume-low";
+                if (soundStatusText) soundStatusText.textContent = "Sound: 60% (Medium)";
+                if (soundToggleBtn) {
+                    soundToggleBtn.className = "bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none";
+                }
+                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-low text-sky-600 text-sm";
+                if (floatingText) floatingText.textContent = "60% Volume";
+                if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-sky-500";
             } else {
+                // Muted (0%)
                 if (soundIcon) soundIcon.className = "fa-solid fa-volume-xmark text-slate-400";
-                if (soundStatusText) soundStatusText.textContent = "Sound: Muted";
+                if (soundStatusText) soundStatusText.textContent = "Sound: Muted (0%)";
                 if (soundToggleBtn) {
                     soundToggleBtn.className = "bg-slate-700/50 hover:bg-slate-700 text-slate-400 border border-slate-600 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none";
                 }
-                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-xmark text-slate-400";
-                if (floatingText) floatingText.textContent = "Audio Muted";
-                if (floatingPulse) floatingPulse.className = "w-2 h-2 rounded-full bg-slate-400";
+                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-xmark text-slate-400 text-sm";
+                if (floatingText) floatingText.textContent = "Muted";
+                if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-slate-400";
             }
         }
 
-        // Toggle sound active state with audio confirmation
-        function toggleSound(e) {
+        // Cycle through volume levels: 1.0 (100%) -> 0.6 (60%) -> 0.0 (Mute) -> 1.0
+        function cycleVolume(e) {
             if (e) e.stopPropagation();
             initAudioContext();
-            isSoundActive = !isSoundActive;
-            localStorage.setItem('as_sound_enabled', isSoundActive);
+            
+            let currentIndex = volumeLevels.indexOf(currentVolume);
+            if (currentIndex === -1) currentIndex = 0;
+            let nextIndex = (currentIndex + 1) % volumeLevels.length;
+            currentVolume = volumeLevels[nextIndex];
+            
+            localStorage.setItem('as_sound_volume', currentVolume);
+            
+            // Smoothly update Master Gain Node
+            if (masterGainNode && audioCtx) {
+                masterGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+                masterGainNode.gain.setValueAtTime(masterGainNode.gain.value, audioCtx.currentTime);
+                masterGainNode.gain.linearRampToValueAtTime(currentVolume, audioCtx.currentTime + 0.04);
+            }
+            
             updateSoundUI();
-            if (isSoundActive) {
-                playChime([523.25, 659.25, 783.99], 0.08, 0.035); // Ascending C major chime
+            
+            // Provide immediate acoustic confirmation of the new volume
+            if (currentVolume >= 0.9) {
+                playChime([523.25, 659.25, 783.99], 0.07, 0.28, 0.28); // Rich C major chord at 100% volume
+            } else if (currentVolume > 0) {
+                playChime([523.25, 659.25], 0.07, 0.22, 0.24); // Pleasant dual tone at 60% volume
             } else {
-                playChime([659.25, 440], 0.07, 0.02); // Descending gentle mute tone
+                // Gentle descending tone right before complete silence
+                playTone(440, 'sine', 0.1, 0.15);
             }
         }
 
-        // Responsive tone synthesizer with smooth envelopes
-        function playTone(freq, type = 'sine', duration = 0.12, gainLevel = 0.04) {
-            if (!isSoundActive) return;
+        // Responsive tone synthesizer with boosted volume and master gain
+        function playTone(freq, type = 'sine', duration = 0.14, gainLevel = 0.28) {
+            if (currentVolume <= 0) return;
             initAudioContext();
             if (!audioCtx) return;
             try {
@@ -539,15 +580,19 @@
                 gain.gain.setValueAtTime(gainLevel, now);
                 gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
                 osc.connect(gain);
-                gain.connect(audioCtx.destination);
+                if (masterGainNode) {
+                    gain.connect(masterGainNode);
+                } else {
+                    gain.connect(audioCtx.destination);
+                }
                 osc.start(now);
                 osc.stop(now + duration);
             } catch (err) {}
         }
 
-        // Chord / multi-tone helper for joyful micro-interactions
-        function playChime(frequencies, noteSpacing = 0.08, gainLevel = 0.035) {
-            if (!isSoundActive) return;
+        // Chord / multi-tone helper for joyful, high-volume micro-interactions
+        function playChime(frequencies, noteSpacing = 0.08, gainLevel = 0.24, duration = 0.3) {
+            if (currentVolume <= 0) return;
             initAudioContext();
             if (!audioCtx) return;
             try {
@@ -559,39 +604,43 @@
                     osc.type = 'sine';
                     osc.frequency.setValueAtTime(freq, noteTime);
                     gain.gain.setValueAtTime(gainLevel, noteTime);
-                    gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 0.22);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + duration);
                     osc.connect(gain);
-                    gain.connect(audioCtx.destination);
+                    if (masterGainNode) {
+                        gain.connect(masterGainNode);
+                    } else {
+                        gain.connect(audioCtx.destination);
+                    }
                     osc.start(noteTime);
-                    osc.stop(noteTime + 0.22);
+                    osc.stop(noteTime + duration);
                 });
             } catch (err) {}
         }
 
-        // Responsive click / tap sound (instantaneous on mobile and desktop)
+        // Boosted click / tap sound (responsive on both mobile and desktop)
         function playSound(variant = 'default') {
-            if (!isSoundActive) return;
+            if (currentVolume <= 0) return;
             if (variant === 'cta') {
-                playChime([659.25, 880], 0.09, 0.045); // E5 -> A5 ascending chime for CTA / WhatsApp
+                // E5 -> A5 -> C6 rich 3-note ascending harmonic chime at high volume
+                playChime([659.25, 880, 1046.5], 0.08, 0.28, 0.35);
             } else {
-                playTone(587.33, 'sine', 0.12, 0.04); // Crisp D5 note
+                // Crisp, punchy D5 note with resonant body
+                playTone(587.33, 'sine', 0.14, 0.28);
             }
         }
 
-        // Responsive hover sound (gentle micro-tone, desktop-optimized)
+        // Boosted hover sound (audible yet gentle triangle micro-tone)
         function playHoverSound() {
-            if (!isSoundActive) return;
-            // Only trigger hover if device supports hover to prevent mobile double-firing
+            if (currentVolume <= 0) return;
             if (window.matchMedia('(hover: hover)').matches) {
-                playTone(440, 'triangle', 0.07, 0.015); // A4 soft blip
+                playTone(440, 'triangle', 0.08, 0.10); // A4 crisp blip at 0.10 gain
             }
         }
 
-        // Initialize UI state on page load
+        // Initialize UI on page load
         document.addEventListener('DOMContentLoaded', () => {
             updateSoundUI();
         });
-        // Also run immediately in case DOM is already ready
         updateSoundUI();
     </script>
 </body>
