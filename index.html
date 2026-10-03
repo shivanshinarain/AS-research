@@ -30,7 +30,7 @@
         }
     </script>
 </head>
-<body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-[#C5ADC5]/30 selection:text-slate-900" onclick="initAudioOnInteraction()">
+<body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-[#C5ADC5]/30 selection:text-slate-900" onclick="initAudioContext()">
 
     <!-- Top Announcement & Sound Status Bar -->
     <div class="bg-darknavy text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-3">
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" onclick="playSound()" class="md:hidden text-slate-700 text-xl focus:outline-none p-2" aria-label="Toggle navigation">
+            <button id="mobileMenuBtn" onclick="playSound()" class="md:hidden text-slate-700 text-xl focus:outline-none p-2">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -121,37 +121,15 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Right Hero Card / Free Consult with Research Photo -->
+                <!-- Right Hero Card / Free Consult -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white p-5 sm:p-7 rounded-3xl shadow-xl border border-[#C5ADC5]/40 relative space-y-4">
-                        <div class="absolute -top-3 right-6 bg-[#C5ADC5] text-slate-900 text-xs px-3 py-1 rounded-full font-bold shadow z-10">24/7 Available</div>
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-[#C5ADC5]/40 relative">
+                        <div class="absolute -top-3 right-6 bg-[#C5ADC5] text-slate-900 text-xs px-3 py-1 rounded-full font-bold shadow">24/7 Available</div>
+                        <h3 class="text-xl font-bold text-darknavy mb-2">Consult to our Experts for Free</h3>
+                        <p class="text-xs text-slate-500 mb-6">Our team of experts are available for you round the clock!</p>
                         
-                        <!-- Responsive Hero Photograph -->
-                        <div class="relative rounded-2xl overflow-hidden shadow-md group">
-                            <img src="hero-academic-research.jpg" 
-                                 alt="AS Research Pub - Scholarly Academic Publishing & Research Consultancy" 
-                                 class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out">
-                            <div class="absolute inset-0 bg-gradient-to-t from-darknavy/80 via-darknavy/20 to-transparent"></div>
-                            
-                            <!-- Badges on Image -->
-                            <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-darknavy shadow-sm border border-[#C5ADC5]/40 flex items-center space-x-1.5">
-                                <i class="fa-solid fa-microscope text-[#7E83C4]"></i>
-                                <span>Scopus & SCI Advisory</span>
-                            </div>
-                            <div class="absolute bottom-3 left-3 right-3 text-white">
-                                <span class="text-[10px] font-bold tracking-wide uppercase text-[#B2B5E0] block">Kanpur Advisory Desk</span>
-                                <span class="text-xs sm:text-sm font-extrabold leading-tight block">Empirical Research & Journal Publishing</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-bold text-darknavy mb-1">Consult to our Experts for Free</h3>
-                            <p class="text-xs text-slate-500 mb-4">Our team of experts are available for you round the clock!</p>
-                        </div>
-                        
-                        <div class="space-y-3">
-                            <div class="bg-[#F9F8FC] p-3.5 rounded-2xl border border-[#C5ADC5]/40 flex items-center space-x-4">
+                        <div class="space-y-4">
+                            <div class="bg-[#F9F8FC] p-4 rounded-2xl border border-[#C5ADC5]/40 flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-xl flex items-center justify-center text-xl shrink-0 font-bold">
                                     <i class="fa-solid fa-headset"></i>
                                 </div>
@@ -160,7 +138,7 @@
                                     <div class="text-base font-extrabold text-darknavy">+91 81718 20009</div>
                                 </div>
                             </div>
-                            <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="w-full bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold py-3.5 rounded-xl transition text-sm shadow flex items-center justify-center space-x-2">
+                            <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="w-full bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold py-4 rounded-xl transition text-sm shadow flex items-center justify-center space-x-2">
                                 <i class="fa-solid fa-phone mr-2"></i> Call Now / WhatsApp
                             </a>
                         </div>
@@ -170,16 +148,15 @@
         </div>
     </section>
 
-    <!-- Trusted By Industry Renowned Publications -->
+    <!-- Trusted By Industry Renowned Publications (Without IEEE Xplore) -->
     <section class="py-12 bg-white border-b border-[#C5ADC5]/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">Trusted by Industry Renowned Publications & Indexing Standards</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-8 items-center justify-center opacity-80">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 items-center justify-center opacity-80">
                 <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">Scopus Indexed</div>
                 <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">SCI & SCIE</div>
                 <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">UGC-CARE Approved</div>
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">IEEE Xplore</div>
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm col-span-2 md:col-span-1">Springer Nature</div>
+                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">Springer Nature</div>
             </div>
         </div>
     </section>
@@ -430,7 +407,7 @@
         </div>
     </footer>
 
-    <!-- Permanent Sound & Responsive Script -->
+    <!-- Web Audio API Script -->
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobileMenuBtn');
@@ -439,25 +416,22 @@
             menu.classList.toggle('hidden');
         });
 
-        // Permanent Audio Engine using Web Audio API
+        // Web Audio API Context
         let audioCtx = null;
-        let audioInitialized = false;
 
-        function initAudioOnInteraction() {
-            if(!audioInitialized) {
-                try {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                    if(audioCtx.state === 'suspended') {
-                        audioCtx.resume();
-                    }
-                    audioInitialized = true;
-                } catch(e) {}
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
             }
         }
 
         function playSound() {
-            initAudioOnInteraction();
-            if(!audioCtx) return;
+            initAudioContext();
+            if (!audioCtx) return;
             try {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
@@ -473,8 +447,8 @@
         }
 
         function playHoverSound() {
-            initAudioOnInteraction();
-            if(!audioCtx) return;
+            initAudioContext();
+            if (!audioCtx) return;
             try {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
