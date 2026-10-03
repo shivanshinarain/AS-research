@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS Research Pub — Open Access Academic & Scientific Publishing</title>
+    <meta name="description" content="AS Research Pub is an elite peer-reviewed academic publishing platform providing fast review cycles, CrossRef DOI assignment, and open access dissemination.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D4ED8',
+                        primaryHover: '#1E40AF',
+                        darknavy: '#0F172A',
+                        slatebg: '#F8FAFC',
+                        slateborder: '#E2E8F0',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #F1F5F9; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+    </style>
+</head>
+<body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-darknavy text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium border-b border-slate-800">
+        <span class="bg-blue-600 text-white text-[11px] px-2.5 py-0.5 rounded-full font-semibold mr-2 font-mono">ISSN 2583-XXXX</span> 
+        Call for Papers: Volume 4, Issue 4 (October 2026) Now Open. Fast Peer Review & DOI Assignment.
+        <a href="#submit" class="underline underline-offset-2 ml-2 text-blue-300 hover:text-white font-semibold">Submit Now &rarr;</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                    AS
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-darknavy block leading-none">AS Research Pub</span>
+                    <span class="text-xs text-slate-500 font-medium tracking-wide">Academic & Scientific Publications</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-slate-600">
+                <a href="#journals" class="hover:text-primary transition-colors">Journals</a>
+                <a href="#articles" class="hover:text-primary transition-colors">Latest Articles</a>
+                <a href="#submit" class="hover:text-primary transition-colors">Submit Paper</a>
+                <a href="#pricing" class="hover:text-primary transition-colors">APC & Pricing</a>
+                <a href="#guidelines" class="hover:text-primary transition-colors">Author Guidelines</a>
+                <a href="#ethics" class="hover:text-primary transition-colors">Ethics & Policy</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="hidden md:flex items-center space-x-3">
+                <button onclick="document.getElementById('searchInput').focus(); window.scrollTo({top: 200, behavior: 'smooth'});" class="p-2 text-slate-500 hover:text-primary rounded-xl hover:bg-slate-100 transition" title="Search papers">
+                    <i class="fa-solid fa-magnifying-glass text-base"></i>
+                </button>
+                <a href="#submit" class="bg-primary hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                    <span>Submit Manuscript</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-slate-700 text-xl focus:outline-none p-2 rounded-lg hover:bg-slate-100" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 font-medium text-slate-700 shadow-lg">
+            <a href="#journals" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Journals</a>
+            <a href="#articles" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Latest Articles</a>
+            <a href="#submit" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Submit Paper</a>
+            <a href="#pricing" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">APC & Pricing</a>
+            <a href="#guidelines" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Author Guidelines</a>
+            <a href="#ethics" class="block hover:text-primary py-1" onclick="toggleMobileMenu()">Ethics & Policy</a>
+            <div class="pt-3 border-t border-slate-100">
+                <a href="#submit" onclick="toggleMobileMenu()" class="block w-full text-center bg-primary text-white py-2.5 rounded-xl font-semibold shadow-sm">
+                    Submit Manuscript
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 py-16 lg:py-24 overflow-hidden border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 text-primary px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide">
+                        <i class="fa-solid fa-shield-check text-blue-600"></i>
+                        <span>UGC-CARE Compliant & Peer-Reviewed Infrastructure</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darknavy tracking-tight leading-[1.15]">
+                        Advancing Global Research Through <span class="text-primary">Open Access Publishing</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+                        A peer-reviewed academic publishing platform providing fast review cycles, DOI assignment, and rigorous editorial standards for researchers, scholars, and institutional authors across diverse scientific domains.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#submit" class="bg-primary hover:bg-blue-700 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20 transition-all flex items-center space-x-2">
+                            <span>Submit Your Paper</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#journals" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold px-7 py-3.5 rounded-xl transition">
+                            Explore Journals
+                        </a>
+                    </div>
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200">
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-darknavy">14 Days</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Average Review Time</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-darknavy">100%</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Open Access (CC-BY)</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-primary font-mono">CrossRef</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Permanent DOI Assured</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Quick Search / Submission Widget -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white p-7 sm:p-8 rounded-3xl shadow-xl border border-slate-200 relative">
+                        <div class="absolute -top-3 right-6 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm">Instant Lookup</div>
+                        <h3 class="text-xl font-bold text-darknavy mb-1">Search Published Articles</h3>
+                        <p class="text-xs text-slate-500 mb-6">Access peer-reviewed papers across multidisciplinary subjects.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Keyword or Title</label>
+                                <input type="text" id="searchInput" onkeydown="if(event.key==='Enter') handleSearch()" placeholder="e.g. Artificial Intelligence, Renewable Energy..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Select Field</label>
+                                <select id="fieldSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                                    <option value="">All Disciplines</option>
+                                    <option value="engineering">Engineering & Technology</option>
+                                    <option value="management">Management & Commerce</option>
+                                    <option value="science">Applied Sciences & Research</option>
+                                    <option value="humanities">Humanities & Social Sciences</option>
+                                </select>
+                            </div>
+                            <button onclick="handleSearch()" class="w-full bg-darknavy hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition text-sm shadow flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <span>Search Research Archive</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journals & Disciplines Section -->
+    <section id="journals" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Peer-Reviewed Catalogs</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Active Research Journals</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">Browse our high-impact peer-reviewed open access journals catering to global academic standards.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Journal Card 1 -->
+                <div class="bg-slatebg border border-slate-200 rounded-3xl p-6 hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-primary text-xs font-bold px-3 py-1 rounded-full">Engineering</span>
+                            <span class="text-xs text-slate-500 font-mono">ISSN: 2583-1011</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2 group-hover:text-primary transition-colors">International Journal of Advanced Engineering & Computing</h3>
+                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Focuses on software engineering, artificial intelligence, IoT architectures, and computational systems.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                        <span class="font-semibold text-slate-700">Frequency: Bimonthly</span>
+                        <a href="#submit" onclick="preselectJournal('eng')" class="text-primary font-bold hover:underline flex items-center gap-1">
+                            Submit Paper &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Journal Card 2 -->
+                <div class="bg-slatebg border border-slate-200 rounded-3xl p-6 hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Management</span>
+                            <span class="text-xs text-slate-500 font-mono">ISSN: 2583-1028</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2 group-hover:text-primary transition-colors">Journal of Modern Business Strategy & Economics</h3>
+                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Covers contemporary corporate strategies, financial analytics, digital marketing trends, and economic policy.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                        <span class="font-semibold text-slate-700">Frequency: Quarterly</span>
+                        <a href="#submit" onclick="preselectJournal('mgmt')" class="text-primary font-bold hover:underline flex items-center gap-1">
+                            Submit Paper &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Journal Card 3 -->
+                <div class="bg-slatebg border border-slate-200 rounded-3xl p-6 hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Applied Science</span>
+                            <span class="text-xs text-slate-500 font-mono">ISSN: 2583-1044</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-darknavy mb-2 group-hover:text-primary transition-colors">Journal of Applied Scientific Research & Innovation</h3>
+                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Publishes empirical research in biotechnology, renewable energy systems, material science, and applied physics.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
+                        <span class="font-semibold text-slate-700">Frequency: Monthly</span>
+                        <a href="#submit" onclick="preselectJournal('sci')" class="text-primary font-bold hover:underline flex items-center gap-1">
+                            Submit Paper &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Publications / Articles Showcase -->
+    <section id="articles" class="py-20 bg-slate-50 border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Recent Publications</span>
+                    <h2 class="text-3xl font-extrabold text-darknavy mt-3">Latest Peer-Reviewed Articles</h2>
+                </div>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2 md:mt-0 max-w-sm">
+                    Open access articles with DOI verification, full-text reading, and instant reference citation.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Article 1 -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span class="bg-blue-50 text-primary text-xs font-bold px-3 py-1 rounded-full border border-blue-100">Engineering & AI</span>
+                        <span class="text-xs text-slate-500 font-mono">DOI: 10.2583/ASRP.2026.0492</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-darknavy hover:text-primary cursor-pointer transition mb-2" onclick="openPaperPreview('Transformer-Based Diagnostics in Clinical Oncology', '10.2583/ASRP.2026.0492')">
+                        Transformer-Based Architecture for Real-Time Multimodal Diagnostic Reasoning in Clinical Oncology
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-3">
+                        <span class="font-semibold text-slate-700">Authors:</span> Dr. Elena Vance, Prof. Marcus Thorne, Sarah Jenkins
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                        This study proposes an advanced transformer framework capable of synthesizing high-dimensional radiological imaging and genomic sequencing data to predict tumor progression trajectories with 94.2% sensitivity...
+                    </p>
+                    <div class="flex flex-wrap items-center justify-between pt-4 border-t border-slate-100 gap-4 text-xs">
+                        <div class="text-slate-500 flex items-center space-x-4">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> Oct 2026</span>
+                            <span><i class="fa-solid fa-eye mr-1"></i> 1,420 Views</span>
+                            <span><i class="fa-solid fa-download mr-1"></i> 890 Downloads</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="copyCitation('Transformer-Based Architecture for Real-Time Multimodal Diagnostic Reasoning in Clinical Oncology', 'Vance et al. (2026)', '10.2583/ASRP.2026.0492')" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition">
+                                <i class="fa-solid fa-quote-right mr-1"></i> Cite
+                            </button>
+                            <button onclick="openPaperPreview('Transformer-Based Diagnostics in Clinical Oncology', '10.2583/ASRP.2026.0492')" class="px-4 py-2 bg-primary hover:bg-blue-700 text-white font-semibold rounded-xl transition flex items-center gap-1.5 shadow-xs">
+                                <i class="fa-solid fa-file-pdf"></i> Read Paper
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs hover:shadow-md transition">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span class="bg-emerald-50 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100">Applied Science</span>
+                        <span class="text-xs text-slate-500 font-mono">DOI: 10.2583/ASRP.2026.0381</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-darknavy hover:text-primary cursor-pointer transition mb-2" onclick="openPaperPreview('Next-Gen Solid-State Lithium-Sulfur Batteries', '10.2583/ASRP.2026.0381')">
+                        Next-Generation Solid-State Lithium-Sulfur Batteries with Nanoporous Graphene Interlayers
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-3">
+                        <span class="font-semibold text-slate-700">Authors:</span> Dr. Amir Al-Mansoor, Dr. Li Wei, Rachel Green
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                        High-capacity energy storage remains a primary bottleneck for large-scale renewable integration. Herein, we demonstrate a novel solid-state lithium-sulfur battery architecture utilizing functionalized nanoporous graphene...
+                    </p>
+                    <div class="flex flex-wrap items-center justify-between pt-4 border-t border-slate-100 gap-4 text-xs">
+                        <div class="text-slate-500 flex items-center space-x-4">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> Oct 2026</span>
+                            <span><i class="fa-solid fa-eye mr-1"></i> 2,105 Views</span>
+                            <span><i class="fa-solid fa-download mr-1"></i> 1,340 Downloads</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="copyCitation('Next-Generation Solid-State Lithium-Sulfur Batteries with Nanoporous Graphene Interlayers', 'Al-Mansoor et al. (2026)', '10.2583/ASRP.2026.0381')" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition">
+                                <i class="fa-solid fa-quote-right mr-1"></i> Cite
+                            </button>
+                            <button onclick="openPaperPreview('Next-Gen Solid-State Lithium-Sulfur Batteries', '10.2583/ASRP.2026.0381')" class="px-4 py-2 bg-primary hover:bg-blue-700 text-white font-semibold rounded-xl transition flex items-center gap-1.5 shadow-xs">
+                                <i class="fa-solid fa-file-pdf"></i> Read Paper
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APC & Pricing Section -->
+    <section id="pricing" class="py-20 bg-slatebg border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Transparent Structure</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Article Processing Charges (APC)</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">Affordable publishing fees structured for researchers and students with zero hidden charges.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Indian Researchers</div>
+                        <div class="text-3xl font-extrabold text-darknavy mb-4">₹1,500 <span class="text-xs font-normal text-slate-500">/ paper</span></div>
+                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Standard online publication with e-certificate for authors and DOI inclusion.</p>
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Peer Review within 7 days</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Crossref DOI Assignment</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> E-Certificate for all authors</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Open Access PDF Hosting</li>
+                        </ul>
+                    </div>
+                    <a href="#submit" class="w-full bg-slate-100 hover:bg-slate-200 text-darknavy font-semibold py-3 rounded-xl text-center text-xs transition block">Choose Standard</a>
+                </div>
+
+                <!-- Plan 2 (Featured) -->
+                <div class="bg-darknavy text-white border-2 border-primary rounded-3xl p-8 shadow-xl flex flex-col justify-between relative transform md:-translate-y-2">
+                    <div class="absolute -top-3 right-6 bg-primary text-white text-xs px-3 py-1 rounded-full font-bold shadow">Most Popular</div>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-blue-400 mb-2">Fast-Track Indian Scholars</div>
+                        <div class="text-3xl font-extrabold text-white mb-4">₹2,500 <span class="text-xs font-normal text-slate-400">/ paper</span></div>
+                        <p class="text-xs text-slate-300 mb-6 leading-relaxed">Priority editorial handling and express peer review within 48 hours.</p>
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Priority Review (48 Hours)</li>
+                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Dedicated Editor Assistance</li>
+                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Crossref DOI Assignment</li>
+                            <li><i class="fa-solid fa-check text-primary mr-2"></i> Hardcopy Certificates (Optional)</li>
+                        </ul>
+                    </div>
+                    <a href="#submit" class="w-full bg-primary hover:bg-blue-600 text-white font-semibold py-3 rounded-xl text-center text-xs transition shadow block">Select Fast-Track</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col justify-between hover:border-slate-300 transition">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">International Authors</div>
+                        <div class="text-3xl font-extrabold text-darknavy mb-4">$50 <span class="text-xs font-normal text-slate-500">/ paper</span></div>
+                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Standard international processing for authors outside India.</p>
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> International Peer Review</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Crossref DOI Included</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Permanent Web Archiving</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Citation Export Tools</li>
+                        </ul>
+                    </div>
+                    <a href="#submit" class="w-full bg-slate-100 hover:bg-slate-200 text-darknavy font-semibold py-3 rounded-xl text-center text-xs transition block">Select International</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Guidelines Section -->
+    <section id="guidelines" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Submission Checklist</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Author Submission Guidelines</h2>
+                <p class="text-slate-600 text-sm mt-2">Ensure your research manuscript strictly conforms to these guidelines prior to final upload.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slatebg p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center mb-4">1</div>
+                    <h3 class="text-base font-bold text-darknavy mb-2">Manuscript Formatting</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Manuscripts should be in Microsoft Word (.docx) or PDF double-column format using standard IEEE or APA 7th style conventions with high-resolution figures.
+                    </p>
+                </div>
+                <div class="bg-slatebg p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center mb-4">2</div>
+                    <h3 class="text-base font-bold text-darknavy mb-2">Originality & Plagiarism</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Similarity index must not exceed 15% (excluding references). All submissions are automatically processed through automated Crossref similarity detection tools.
+                    </p>
+                </div>
+                <div class="bg-slatebg p-6 rounded-2xl border border-slate-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-primary font-bold flex items-center justify-center mb-4">3</div>
+                    <h3 class="text-base font-bold text-darknavy mb-2">Copyright & Licensing</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Authors retain full copyright under the Creative Commons Attribution 4.0 International (CC-BY 4.0) license, allowing unrestricted scholarly reuse with credit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manuscript Submission Section -->
+    <section id="submit" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-md">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Online Submission</span>
+                    <h2 class="text-3xl font-extrabold text-darknavy mt-3">Submit Your Manuscript</h2>
+                    <p class="text-slate-600 text-sm mt-2">Fill out the form below to submit your research paper for immediate peer review.</p>
+                </div>
+
+                <form onsubmit="handleSubmission(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Corresponding Author Name *</label>
+                            <input type="text" id="subAuthor" required placeholder="Dr. / Mr. / Ms. Full Name" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Email Address *</label>
+                            <input type="email" id="subEmail" required placeholder="author@institution.ac.in" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Select Journal / Discipline *</label>
+                            <select id="subJournal" required class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                                <option value="">Select Journal</option>
+                                <option value="eng">Int. Journal of Advanced Engineering & Computing</option>
+                                <option value="mgmt">Journal of Modern Business Strategy & Economics</option>
+                                <option value="sci">Journal of Applied Scientific Research & Innovation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Paper Title *</label>
+                            <input type="text" id="subTitle" required placeholder="Full title of your research paper" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Abstract (Max 300 Words) *</label>
+                        <textarea required rows="4" placeholder="Provide a concise summary of your research objectives, methodology, and conclusions..." class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">Upload Manuscript (PDF / DOCX) *</label>
+                        <input type="file" required accept=".pdf,.doc,.docx" class="w-full bg-slatebg border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-primary hover:file:bg-blue-100">
+                    </div>
+
+                    <div class="flex items-center gap-2 text-xs text-slate-600">
+                        <input type="checkbox" required class="rounded text-primary focus:ring-primary">
+                        <span>I confirm that this manuscript represents original research and is not under review elsewhere.</span>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Complete Manuscript Submission</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethics & Policy Section -->
+    <section id="ethics" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Academic Standards</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darknavy mt-3">Publication Ethics & COPE Compliance</h2>
+                <p class="text-slate-600 text-sm mt-2">AS Research Pub strictly adheres to international codes of conduct and ethical integrity.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slatebg p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-lg font-bold text-darknavy mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-primary"></i>
+                        <span>Double-Blind Peer Review Policy</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        To preserve impartiality, reviewer and author identities are reciprocally blinded throughout the evaluation cycle. Every submission is appraised by at least two independent subject matter specialists.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Initial Editorial Screening within 48 hours</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Objective technical review without institutional bias</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slatebg p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-lg font-bold text-darknavy mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-fingerprint text-primary"></i>
+                        <span>Plagiarism Screening & Retraction</span>
+                    </h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                        Zero tolerance for academic dishonesty or uncredited attribution. Any manuscript exhibiting data falsification, duplicate submission, or uncredited reproduction will be immediately rejected or retracted.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Automated similarity index verification</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Crossref permanent DOI retraction tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darknavy text-white py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-lg">AS</div>
+                        <span class="text-xl font-extrabold tracking-tight">AS Research Pub</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        An open-access academic publishing portal dedicated to disseminating peer-reviewed research and scholarly articles globally.
+                    </p>
+                    <p class="text-xs text-slate-500 font-mono">ISSN: 2583-XXXX • CrossRef Member</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#journals" class="hover:text-white transition">Journals Archive</a></li>
+                        <li><a href="#articles" class="hover:text-white transition">Latest Publications</a></li>
+                        <li><a href="#submit" class="hover:text-white transition">Submit Manuscript</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">APC & Payment</a></li>
+                        <li><a href="#guidelines" class="hover:text-white transition">Author Guidelines</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Policies</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#ethics" class="hover:text-white transition">Peer Review Process</a></li>
+                        <li><a href="#ethics" class="hover:text-white transition">Plagiarism Policy</a></li>
+                        <li><a href="#ethics" class="hover:text-white transition">Open Access License</a></li>
+                        <li><a href="#ethics" class="hover:text-white transition">Publication Ethics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider mb-4 text-slate-300">Contact & Support</h4>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope mr-2 text-primary"></i> support@asresearchpub.org</p>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-globe mr-2 text-primary"></i> www.asresearchpub.org</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-clock mr-2 text-primary"></i> Mon - Sat: 9:00 AM - 6:00 PM IST</p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                &copy; 2026 AS Research Pub. All rights reserved. Published under Open Access Creative Commons CC-BY 4.0 License.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Chatbot Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div id="chatWindow" class="hidden w-80 sm:w-96 bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden mb-4 flex flex-col">
+            <div class="bg-darknavy text-white p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="font-bold text-sm">Research Assistant</span>
+                </div>
+                <button onclick="toggleChat()" class="text-slate-400 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chatMessages" class="p-4 h-64 overflow-y-auto space-y-3 text-xs bg-slatebg">
+                <div class="bg-white p-3 rounded-2xl shadow-xs border border-slate-200 text-slate-700 max-w-[85%]">
+                    Hello! Welcome to AS Research Pub. How can I help you find a journal, check APC fees, or submit your manuscript today?
+                </div>
+            </div>
+            <div class="p-3 bg-white border-t border-slate-200 flex items-center space-x-2">
+                <input type="text" id="chatInput" onkeydown="if(event.key==='Enter') sendMessage()" placeholder="Ask about submission, APC, DOI..." class="flex-1 bg-slate-100 border border-slate-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-primary">
+                <button onclick="sendMessage()" class="bg-primary text-white px-4 py-2 rounded-xl text-xs font-semibold hover:bg-blue-700 transition">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="w-14 h-14 bg-primary hover:bg-blue-700 text-white rounded-full shadow-2xl flex items-center justify-center text-xl transition transform hover:scale-105" aria-label="Open Assistant">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+    </div>
+
+    <!-- Paper Preview Modal -->
+    <div id="paperModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closePaperModal()" class="absolute top-6 right-6 text-slate-400 hover:text-darknavy text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="paperModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="hidden fixed bottom-6 left-6 z-50 bg-darknavy text-white px-5 py-3 rounded-2xl shadow-xl text-xs sm:text-sm font-medium flex items-center gap-3 border border-slate-700 transition-all">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toastMsg">Action completed successfully.</span>
+    </div>
+
+    <!-- Script Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        mobileBtn.addEventListener('click', toggleMobileMenu);
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        // Chat Widget Toggle
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                setTimeout(() => document.getElementById('chatInput')?.focus(), 100);
+            }
+        }
+
+        // Chat Message Sender
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            const val = input.value.trim();
+            if(!val) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'bg-primary text-white p-3 rounded-2xl shadow-xs max-w-[85%] ml-auto leading-relaxed';
+            userMsg.textContent = val;
+            messages.appendChild(userMsg);
+
+            const query = val.toLowerCase();
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'bg-white p-3 rounded-2xl shadow-xs border border-slate-200 text-slate-700 max-w-[85%] leading-relaxed';
+                
+                if(query.includes('fee') || query.includes('apc') || query.includes('price') || query.includes('cost')) {
+                    botMsg.textContent = "Our Article Processing Charge (APC) is ₹1,500 for Indian researchers (Standard), ₹2,500 for Fast-Track (48-hour decision), and $50 USD for International authors.";
+                } else if(query.includes('submit') || query.includes('paper') || query.includes('upload')) {
+                    botMsg.textContent = "You can submit your paper directly using the 'Submit Manuscript' section on this page by providing author credentials and attaching your PDF or DOCX file.";
+                } else if(query.includes('doi') || query.includes('crossref')) {
+                    botMsg.textContent = "Yes, all accepted and published articles are registered with permanent CrossRef DOIs for persistent academic indexing and citation tracking.";
+                } else if(query.includes('time') || query.includes('review') || query.includes('duration')) {
+                    botMsg.textContent = "Standard peer review takes approximately 7 to 14 days. Fast-track peer review is completed within 48 hours.";
+                } else {
+                    botMsg.textContent = "Thank you for your inquiry. For detailed editorial assistance, you can email our support desk at support@asresearchpub.org.";
+                }
+                messages.appendChild(botMsg);
+                messages.scrollTop = messages.scrollHeight;
+            }, 550);
+        }
+
+        // Search Action
+        function handleSearch() {
+            const keyword = document.getElementById('searchInput').value.trim();
+            const field = document.getElementById('fieldSelect').value;
+            if(!keyword && !field) {
+                showToast('Please enter a keyword or select a field.');
+                return;
+            }
+            showToast(`Found 12 matching articles for "${keyword || field}". Displaying results...`);
+            document.getElementById('articles')?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Submission Action
+        function handleSubmission(e) {
+            e.preventDefault();
+            const id = 'AS-2026-' + Math.floor(1000 + Math.random() * 9000);
+            showToast(`Manuscript submitted successfully! Your tracking ID is ${id}.`);
+            e.target.reset();
+        }
+
+        function preselectJournal(val) {
+            const sel = document.getElementById('subJournal');
+            if(sel) sel.value = val;
+        }
+
+        // Paper Preview & Citation
+        function openPaperPreview(title, doi) {
+            const modal = document.getElementById('paperModal');
+            const content = document.getElementById('paperModalContent');
+            content.innerHTML = `
+                <span class="text-xs font-bold px-3 py-1 bg-blue-50 text-primary rounded-full border border-blue-100">Peer-Reviewed Paper</span>
+                <h3 class="text-xl font-bold text-darknavy mt-3 mb-1">${title}</h3>
+                <p class="text-xs text-slate-500 font-mono mb-4">DOI: ${doi} • Open Access CC-BY 4.0</p>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs text-slate-700 mb-6 leading-relaxed">
+                    <strong>Abstract:</strong> This research paper has been accepted following rigorous double-blind peer review. Full quantitative methodologies, experimental datasets, and source code are openly accessible under the Creative Commons license.
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="showToast('Downloading full-text PDF...'); closePaperModal();" class="flex-grow bg-primary text-white py-3 rounded-xl font-semibold text-xs hover:bg-blue-700 transition">
+                        <i class="fa-solid fa-download mr-1"></i> Download PDF
+                    </button>
+                    <button onclick="closePaperModal()" class="px-6 bg-slate-100 text-slate-700 py-3 rounded-xl font-semibold text-xs hover:bg-slate-200 transition">
+                        Close
+                    </button>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closePaperModal() {
+            document.getElementById('paperModal')?.classList.add('hidden');
+        }
+
+        function copyCitation(title, author, doi) {
+            const cite = `${author}. "${title}." AS Research Pub, 2026. https://doi.org/${doi}`;
+            navigator.clipboard.writeText(cite).then(() => {
+                showToast('Citation copied to clipboard!');
+            }).catch(() => {
+                showToast(`Citation: ${cite}`);
+            });
+        }
+    </script>
+</body>
+</html>
