@@ -424,24 +424,7 @@
         </div>
     </footer>
 
-    <!-- Responsive Floating Sound Control Bar (Mobile & Desktop) -->
-    <div id="soundControlWidget" class="fixed bottom-5 left-5 z-40 sm:bottom-6 sm:left-6 flex items-center bg-white/95 backdrop-blur-md border border-[#C5ADC5]/60 shadow-2xl rounded-full p-1.5 transition-all duration-300 hover:shadow-purple-200/50">
-        <!-- Mute / Unmute Button -->
-        <button id="floatingSoundBtn" onclick="toggleMute(event)" class="flex items-center space-x-2 px-3 py-2 rounded-full hover:bg-slate-100 transition active:scale-95 focus:outline-none" title="Mute / Unmute Audio" aria-label="Mute or Unmute Sound">
-            <span id="floatingSoundPulse" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-            <i id="floatingSoundIcon" class="fa-solid fa-volume-high text-[#7E83C4] text-base"></i>
-            <span id="floatingSoundText" class="text-xs font-bold text-darknavy whitespace-nowrap">100%</span>
-        </button>
-        
-        <!-- Responsive Interactive Volume Slider -->
-        <div class="flex items-center space-x-2 px-2 border-l border-[#C5ADC5]/40">
-            <i class="fa-solid fa-volume-low text-slate-400 text-[10px]"></i>
-            <input id="volumeSlider" type="range" min="0" max="100" value="100" oninput="setVolumeFromSlider(this.value)" class="w-16 sm:w-24 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#7E83C4]" title="Drag to adjust sound volume">
-            <i class="fa-solid fa-volume-high text-slate-400 text-[10px]"></i>
-        </div>
-    </div>
-
-    <!-- Responsive Web Audio API Script (High Volume, Dynamics Compressor & Responsive Slider) -->
+    <!-- Responsive Web Audio API Script (High Volume, Dynamics Compressor) -->
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobileMenuBtn');
@@ -458,10 +441,7 @@
         let audioCtx = null;
         let masterGainNode = null;
         let compressorNode = null;
-        
-        let storedVol = parseFloat(localStorage.getItem('as_sound_volume'));
-        let currentVolume = (!isNaN(storedVol) && storedVol >= 0) ? storedVol : 1.0;
-        let lastNonZeroVolume = currentVolume > 0 ? currentVolume : 1.0;
+        let currentVolume = 1.0;
 
         function initAudioContext() {
             if (!audioCtx) {
@@ -478,7 +458,7 @@
                     compressorNode.release.setValueAtTime(0.15, audioCtx.currentTime);
                     compressorNode.connect(audioCtx.destination);
 
-                    // Master Gain Node: Controls overall sound volume
+                    // Master Gain Node: Controls overall sound volume at full loudness
                     masterGainNode = audioCtx.createGain();
                     masterGainNode.gain.setValueAtTime(currentVolume, audioCtx.currentTime);
                     masterGainNode.connect(compressorNode);
@@ -514,71 +494,6 @@
                 audioCtx.resume();
             }
         });
-
-        // Synchronize UI status across slider and floating widget
-        function updateSoundUI() {
-            const floatingIcon = document.getElementById('floatingSoundIcon');
-            const floatingText = document.getElementById('floatingSoundText');
-            const floatingPulse = document.getElementById('floatingSoundPulse');
-            const volumeSlider = document.getElementById('volumeSlider');
-
-            const pct = Math.round(currentVolume * 100);
-            if (volumeSlider) volumeSlider.value = pct;
-
-            if (currentVolume >= 0.7) {
-                // High Boosted Volume
-                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-high text-[#7E83C4]";
-                if (floatingText) floatingText.textContent = `${pct}%`;
-                if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping";
-            } else if (currentVolume > 0.05) {
-                // Medium Volume
-                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-low text-sky-600";
-                if (floatingText) floatingText.textContent = `${pct}%`;
-                if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-sky-500";
-            } else {
-                // Muted (0%)
-                if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-xmark text-slate-400";
-                if (floatingText) floatingText.textContent = "Muted";
-                if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-slate-400";
-            }
-        }
-
-        // Apply volume with smooth gain envelope
-        function applyVolume(vol, playConfirmation = false) {
-            ensureAudioActive(() => {
-                currentVolume = Math.max(0, Math.min(1.0, vol));
-                if (currentVolume > 0) {
-                    lastNonZeroVolume = currentVolume;
-                }
-                localStorage.setItem('as_sound_volume', currentVolume);
-
-                if (masterGainNode && audioCtx) {
-                    masterGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
-                    masterGainNode.gain.setValueAtTime(masterGainNode.gain.value, audioCtx.currentTime);
-                    masterGainNode.gain.linearRampToValueAtTime(currentVolume, audioCtx.currentTime + 0.03);
-                }
-                updateSoundUI();
-
-                if (playConfirmation && currentVolume > 0) {
-                    playTone(587.33, 'sine', 0.12, 0.55);
-                }
-            });
-        }
-
-        // Interactive responsive slider handler
-        function setVolumeFromSlider(val) {
-            applyVolume(parseFloat(val) / 100, false);
-        }
-
-        // Toggle Mute / Unmute
-        function toggleMute(e) {
-            if (e) e.stopPropagation();
-            if (currentVolume > 0) {
-                applyVolume(0.0, false);
-            } else {
-                applyVolume(lastNonZeroVolume || 1.0, true);
-            }
-        }
 
         // Boosted Dual-Harmonic Tone Generator (Fundamental Sine + 2nd Harmonic Triangle)
         function playTone(freq, type = 'sine', duration = 0.16, gainLevel = 0.85) {
@@ -673,12 +588,6 @@
                 playTone(440, 'triangle', 0.09, 0.25); // A4 crisp, clean blip
             }
         }
-
-        // Initialize UI state
-        document.addEventListener('DOMContentLoaded', () => {
-            updateSoundUI();
-        });
-        updateSoundUI();
     </script>
 </body>
 </html>
