@@ -30,18 +30,18 @@
         }
     </script>
 </head>
-<body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-[#C5ADC5]/30 selection:text-slate-900">
+<body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-[#C5ADC5]/30 selection:text-slate-900" onclick="initAudioOnInteraction()">
 
-    <!-- Top Announcement & Sound Toggle Bar -->
-    <div class="bg-darknavy text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-4">
+    <!-- Top Announcement & Sound Status Bar -->
+    <div class="bg-darknavy text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-3">
         <div>
             <span class="bg-[#C5ADC5] text-slate-900 text-xs px-2.5 py-0.5 rounded-full font-bold mr-2">Advisory Open</span> 
             Direct WhatsApp Support: <a href="https://wa.me/918171820009" target="_blank" class="underline font-bold hover:text-[#C5ADC5]">+91 81718 20009</a> (Mon–Sat: 9:30 AM to 7:00 PM IST)
         </div>
-        <button onclick="toggleAudio()" id="audioToggleBtn" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-1 rounded-full transition flex items-center space-x-1.5 border border-white/20">
-            <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
-            <span id="audioText">Sound: Off</span>
-        </button>
+        <div class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5">
+            <i class="fa-solid fa-volume-high animate-pulse"></i>
+            <span>Sound: Active (Permanent)</span>
+        </div>
     </div>
 
     <!-- Navigation Bar -->
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" onclick="playSound()" class="md:hidden text-slate-700 text-xl focus:outline-none" aria-label="Toggle navigation">
+            <button id="mobileMenuBtn" onclick="playSound()" class="md:hidden text-slate-700 text-xl focus:outline-none p-2" aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -97,21 +97,21 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-b from-white to-[#F9F8FC] py-20 lg:py-28 overflow-hidden border-b border-[#C5ADC5]/30">
+    <section id="home" class="relative bg-gradient-to-b from-white to-[#F9F8FC] py-16 sm:py-20 lg:py-28 overflow-hidden border-b border-[#C5ADC5]/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <div class="inline-flex items-center space-x-2 bg-[#C5ADC5]/20 border border-[#C5ADC5] text-slate-900 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide">
                         <i class="fa-solid fa-certificate"></i>
                         <span>Premier Academic Research & Publication Consultancy</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darknavy tracking-tight leading-tight">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-darknavy tracking-tight leading-tight">
                         Empowering Scholars with <span class="text-[#7E83C4]">Publication Excellence</span>
                     </h1>
-                    <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                         Comprehensive end-to-end guidance for research writing, thesis support, data analysis, and successful placement in Scopus, SCI, and UGC-approved peer-reviewed journals.
                     </p>
-                    <div class="flex flex-wrap gap-4 pt-2">
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
                         <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center space-x-2">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
                             <span>Connect on WhatsApp</span>
@@ -121,52 +121,48 @@
                         </a>
                     </div>
                 </div>
-                <!-- Right Hero: Responsive Scholarly Photography & Free Consult -->
+
+                <!-- Right Hero Card / Free Consult with Research Photo -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white p-4 sm:p-5 rounded-3xl shadow-xl border border-[#C5ADC5]/40 space-y-4">
+                    <div class="bg-white p-5 sm:p-7 rounded-3xl shadow-xl border border-[#C5ADC5]/40 relative space-y-4">
+                        <div class="absolute -top-3 right-6 bg-[#C5ADC5] text-slate-900 text-xs px-3 py-1 rounded-full font-bold shadow z-10">24/7 Available</div>
+                        
                         <!-- Responsive Hero Photograph -->
                         <div class="relative rounded-2xl overflow-hidden shadow-md group">
                             <img src="hero-academic-research.jpg" 
                                  alt="AS Research Pub - Scholarly Academic Publishing & Research Consultancy" 
-                                 class="w-full h-56 sm:h-64 md:h-72 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out">
+                                 class="w-full h-48 sm:h-56 md:h-64 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out">
                             <div class="absolute inset-0 bg-gradient-to-t from-darknavy/80 via-darknavy/20 to-transparent"></div>
                             
-                            <!-- Floating Badges on Image -->
+                            <!-- Badges on Image -->
                             <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-darknavy shadow-sm border border-[#C5ADC5]/40 flex items-center space-x-1.5">
                                 <i class="fa-solid fa-microscope text-[#7E83C4]"></i>
                                 <span>Scopus & SCI Advisory</span>
                             </div>
-                            <div class="absolute top-3 right-3 bg-[#C5ADC5] text-slate-900 text-[10px] px-2.5 py-0.5 rounded-full font-bold shadow-xs">
-                                24/7 Available
-                            </div>
                             <div class="absolute bottom-3 left-3 right-3 text-white">
-                                <span class="text-[11px] font-bold tracking-wide uppercase text-[#B2B5E0] block">Kanpur Institutional Desk</span>
-                                <span class="text-sm font-extrabold leading-tight block">Empirical Research & Journal Publishing</span>
+                                <span class="text-[10px] font-bold tracking-wide uppercase text-[#B2B5E0] block">Kanpur Advisory Desk</span>
+                                <span class="text-xs sm:text-sm font-extrabold leading-tight block">Empirical Research & Journal Publishing</span>
                             </div>
                         </div>
 
-                        <!-- Direct Advisory & WhatsApp Box -->
-                        <div class="bg-[#F9F8FC] p-4 rounded-2xl border border-[#C5ADC5]/40 space-y-3">
-                            <div class="flex items-center space-x-3.5">
-                                <div class="w-11 h-11 bg-[#B2B5E0] text-slate-900 rounded-xl flex items-center justify-center text-lg shrink-0 font-bold shadow-xs">
+                        <div>
+                            <h3 class="text-xl font-bold text-darknavy mb-1">Consult to our Experts for Free</h3>
+                            <p class="text-xs text-slate-500 mb-4">Our team of experts are available for you round the clock!</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-[#F9F8FC] p-3.5 rounded-2xl border border-[#C5ADC5]/40 flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-xl flex items-center justify-center text-xl shrink-0 font-bold">
                                     <i class="fa-solid fa-headset"></i>
                                 </div>
-                                <div class="flex-grow">
-                                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Direct Academic Advisory</div>
-                                    <div class="text-base font-extrabold text-darknavy leading-none mt-0.5">+91 81718 20009</div>
-                                    <div class="text-[10px] text-slate-500 mt-0.5">Mon–Sat: 9:30 AM – 7:00 PM IST</div>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-500 uppercase">Direct Advisory Line</div>
+                                    <div class="text-base font-extrabold text-darknavy">+91 81718 20009</div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2 gap-2 pt-1">
-                                <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold py-2.5 px-3 rounded-xl transition text-xs shadow-xs flex items-center justify-center space-x-1.5 text-center">
-                                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a href="https://web.whatsapp.com/send?phone=918171820009" target="_blank" onclick="playSound()" class="bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold py-2.5 px-3 rounded-xl transition text-xs shadow-xs flex items-center justify-center space-x-1.5 text-center">
-                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-[#7E83C4]"></i>
-                                    <span>WhatsApp Web</span>
-                                </a>
-                            </div>
+                            <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="w-full bg-[#B2B5E0] hover:bg-[#9EA1D0] text-slate-900 font-bold py-3.5 rounded-xl transition text-sm shadow flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-phone mr-2"></i> Call Now / WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -178,18 +174,18 @@
     <section class="py-12 bg-white border-b border-[#C5ADC5]/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">Trusted by Industry Renowned Publications & Indexing Standards</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-center opacity-80">
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-sm">Scopus Indexed</div>
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-sm">SCI & SCIE</div>
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-sm">UGC-CARE Approved</div>
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-sm">IEEE Xplore</div>
-                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-sm col-span-2 md:col-span-1">Springer Nature</div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-8 items-center justify-center opacity-80">
+                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">Scopus Indexed</div>
+                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">SCI & SCIE</div>
+                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">UGC-CARE Approved</div>
+                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm">IEEE Xplore</div>
+                <div class="p-4 bg-slatebg rounded-2xl border border-[#C5ADC5]/30 font-bold text-darknavy text-xs sm:text-sm col-span-2 md:col-span-1">Springer Nature</div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-slatebg">
+    <section id="about" class="py-16 sm:py-20 bg-slatebg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-6 space-y-6">
@@ -212,19 +208,19 @@
                     </div>
                 </div>
                 <div class="lg:col-span-6">
-                    <div class="bg-white p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-xl space-y-6">
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-xl space-y-6">
                         <h3 class="text-xl font-bold text-darknavy">Why Choose Us?</h3>
                         <div class="space-y-4 text-xs sm:text-sm text-slate-600">
                             <div class="flex items-start space-x-3">
-                                <i class="fa-solid fa-circle-check text-[#7E83C4] text-base mt-0.5"></i>
+                                <i class="fa-solid fa-circle-check text-[#7E83C4] text-base mt-0.5 shrink-0"></i>
                                 <div><strong class="text-darknavy">End-to-End Assistance:</strong> From initial synopsis and literature review to final galley proofs and peer-review responses.</div>
                             </div>
                             <div class="flex items-start space-x-3">
-                                <i class="fa-solid fa-circle-check text-[#7E83C4] text-base mt-0.5"></i>
+                                <i class="fa-solid fa-circle-check text-[#7E83C4] text-base mt-0.5 shrink-0"></i>
                                 <div><strong class="text-darknavy">Subject Matter Experts:</strong> Qualified academic writers and statisticians across engineering, management, science, and humanities.</div>
                             </div>
                             <div class="flex items-start space-x-3">
-                                <i class="fa-solid fa-circle-check text-[#7E83C4] text-base mt-0.5"></i>
+                                <i class="fa-solid fa-circle-check text-[#7E83C4] text-base mt-0.5 shrink-0"></i>
                                 <div><strong class="text-darknavy">Strict Confidentiality:</strong> Absolute data security and privacy regarding your thesis and research data.</div>
                             </div>
                         </div>
@@ -235,7 +231,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
+    <section id="services" class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-slate-900 font-bold text-xs uppercase tracking-widest bg-[#C5ADC5]/40 px-3 py-1 rounded-full">Our Core Offerings</span>
@@ -245,13 +241,13 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             ✒️
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">Academic Writing</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Well-structured research and review articles tailored to academic standards, ensuring clarity and publication potential.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Well-structured research and review articles tailored to academic standards, ensuring clarity and publication potential.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -259,13 +255,13 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             🌐
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">Publication Services</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">End-to-end support for publishing in Scopus, SCI, and UGC-approved journals—covering journal selection, formatting, submission, and reviewer responses.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">End-to-end support for publishing in Scopus, SCI, and UGC-approved journals—covering journal selection, formatting, submission, and reviewer responses.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -273,13 +269,13 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             📘
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">Thesis & Dissertation Support</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Comprehensive guidance for thesis, dissertation, synopsis, and proposal writing — from ideation to submission.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Comprehensive guidance for thesis, dissertation, synopsis, and proposal writing — from ideation to submission.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -287,13 +283,13 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             🔍
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">SLR & Bibliometric Analysis</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Structured systematic literature reviews and bibliometric mapping to strengthen your research foundation.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Structured systematic literature reviews and bibliometric mapping to strengthen your research foundation.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -301,13 +297,13 @@
                 </div>
 
                 <!-- Service 5 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             📊
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">Data & Statistical Analysis</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Expert assistance using SPSS, R, Python and more for in-depth, publication-grade statistical insights.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Expert assistance using SPSS, R, Python and more for in-depth, publication-grade statistical insights.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -315,13 +311,13 @@
                 </div>
 
                 <!-- Service 6 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             ✏️
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">Editing & Proofreading</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Language polishing, formatting, and academic consistency to refine and elevate your final document.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Language polishing, formatting, and academic consistency to refine and elevate your final document.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -329,13 +325,13 @@
                 </div>
 
                 <!-- Service 7 -->
-                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-8 hover:shadow-xl transition flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                <div onmouseenter="playHoverSound()" class="bg-slatebg border border-[#C5ADC5]/30 rounded-3xl p-6 sm:p-8 hover:shadow-xl transition flex flex-col justify-between md:col-span-2 lg:col-span-1">
                     <div>
                         <div class="w-12 h-12 bg-[#B2B5E0] text-slate-900 rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md font-bold">
                             🛡️
                         </div>
                         <h3 class="text-lg font-bold text-darknavy mb-3">Plagiarism Reduction</h3>
-                        <p class="text-xs text-slate-600 mb-6 leading-relaxed">Content refinement and rewriting to reduce plagiarism and AI-detected text while preserving originality.</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">Content refinement and rewriting to reduce plagiarism and AI-detected text while preserving originality.</p>
                     </div>
                     <a href="https://wa.me/918171820009" target="_blank" onclick="playSound()" class="text-darknavy font-bold text-xs hover:underline inline-flex items-center space-x-1">
                         <span>Explore</span> <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -346,7 +342,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-slatebg border-y border-[#C5ADC5]/30">
+    <section id="testimonials" class="py-16 sm:py-20 bg-slatebg border-y border-[#C5ADC5]/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-slate-900 font-bold text-xs uppercase tracking-widest bg-[#C5ADC5]/40 px-3 py-1 rounded-full">Researcher Feedback</span>
@@ -356,12 +352,12 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-sm flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex text-amber-500 text-xs space-x-1 mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-6">"AS Research Pub team guided me thoroughly through the Scopus publication process. Their reviewer response framing was exceptional!"</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">"AS Research Pub team guided me thoroughly through the Scopus publication process. Their reviewer response framing was exceptional!"</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100">
                         <div class="text-xs font-bold text-darknavy">Dr. Rajesh Kumar Sharma</div>
@@ -370,12 +366,12 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-sm flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex text-amber-500 text-xs space-x-1 mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-6">"Their thesis formatting and data analysis support saved me months of effort. Highly recommended for doctoral candidates."</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">"Their thesis formatting and data analysis support saved me months of effort. Highly recommended for doctoral candidates."</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100">
                         <div class="text-xs font-bold text-darknavy">Priya Verma</div>
@@ -384,12 +380,12 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-white p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-sm flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-[#C5ADC5]/40 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex text-amber-500 text-xs space-x-1 mb-4">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-6">"Quick response on WhatsApp and transparent guidance on UGC-CARE journal selection. Very professional consultancy!"</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">"Quick response on WhatsApp and transparent guidance on UGC-CARE journal selection. Very professional consultancy!"</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100">
                         <div class="text-xs font-bold text-darknavy">Dr. Amit Saxena</div>
@@ -434,7 +430,7 @@
         </div>
     </footer>
 
-    <!-- Web Audio API Sound Synthesizer Script -->
+    <!-- Permanent Sound & Responsive Script -->
     <script>
         // Mobile Menu Toggle
         const btn = document.getElementById('mobileMenuBtn');
@@ -443,39 +439,31 @@
             menu.classList.toggle('hidden');
         });
 
-        // Audio Engine using Web Audio API
+        // Permanent Audio Engine using Web Audio API
         let audioCtx = null;
-        let soundEnabled = false;
+        let audioInitialized = false;
 
-        function toggleAudio() {
-            soundEnabled = !soundEnabled;
-            const icon = document.getElementById('audioIcon');
-            const text = document.getElementById('audioText');
-            
-            if(soundEnabled) {
-                if(!audioCtx) {
+        function initAudioOnInteraction() {
+            if(!audioInitialized) {
+                try {
                     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
-                if(audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-                icon.className = "fa-solid fa-volume-high text-emerald-400";
-                text.textContent = "Sound: On";
-                playChime();
-            } else {
-                icon.className = "fa-solid fa-volume-xmark";
-                text.textContent = "Sound: Off";
+                    if(audioCtx.state === 'suspended') {
+                        audioCtx.resume();
+                    }
+                    audioInitialized = true;
+                } catch(e) {}
             }
         }
 
         function playSound() {
-            if(!soundEnabled || !audioCtx) return;
+            initAudioOnInteraction();
+            if(!audioCtx) return;
             try {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
                 osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5 note
-                gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
@@ -485,36 +473,19 @@
         }
 
         function playHoverSound() {
-            if(!soundEnabled || !audioCtx) return;
+            initAudioOnInteraction();
+            if(!audioCtx) return;
             try {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'triangle';
                 osc.frequency.setValueAtTime(440, audioCtx.currentTime); // A4 note
-                gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
                 osc.start();
                 osc.stop(audioCtx.currentTime + 0.08);
-            } catch(e) {}
-        }
-
-        function playChime() {
-            if(!audioCtx) return;
-            try {
-                const now = audioCtx.currentTime;
-                [523.25, 659.25, 783.99].forEach((freq, i) => {
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.frequency.setValueAtTime(freq, now + i * 0.08);
-                    gain.gain.setValueAtTime(0.04, now + i * 0.08);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.3);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + i * 0.08);
-                    osc.stop(now + i * 0.08 + 0.3);
-                });
             } catch(e) {}
         }
     </script>
