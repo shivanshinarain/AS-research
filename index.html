@@ -32,16 +32,12 @@
 </head>
 <body class="bg-slatebg text-slate-800 font-sans antialiased selection:bg-[#C5ADC5]/30 selection:text-slate-900" onclick="initAudioContext()">
 
-    <!-- Top Announcement & Sound Status Bar -->
+    <!-- Top Announcement Bar -->
     <div class="bg-darknavy text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-3">
         <div>
             <span class="bg-[#C5ADC5] text-slate-900 text-xs px-2.5 py-0.5 rounded-full font-bold mr-2">Advisory Open</span> 
             Direct WhatsApp Support: <a href="https://wa.me/918171820009" target="_blank" class="underline font-bold hover:text-[#C5ADC5]">+91 81718 20009</a> (Mon–Sat: 9:30 AM to 7:00 PM IST)
         </div>
-        <button id="soundToggleBtn" onclick="toggleMute(event)" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400" title="Click to mute or unmute audio feedback" aria-label="Toggle Sound">
-            <i id="soundIcon" class="fa-solid fa-volume-high animate-pulse"></i>
-            <span id="soundStatusText">Sound: 100% (Boosted)</span>
-        </button>
     </div>
 
     <!-- Navigation Bar -->
@@ -169,7 +165,7 @@
         </div>
     </section>
 
-    <!-- Trusted By Industry Renowned Publications (Without IEEE Xplore) -->
+    <!-- Trusted By Industry Renowned Publications -->
     <section class="py-12 bg-white border-b border-[#C5ADC5]/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">Trusted by Industry Renowned Publications & Indexing Standards</h3>
@@ -488,14 +484,26 @@
                     masterGainNode.connect(compressorNode);
                 }
             }
-            if (audioCtx && audioCtx.state === 'suspended') {
-                audioCtx.resume();
+        }
+
+        // Guarantees audio context is active before scheduling sounds
+        function ensureAudioActive(callback) {
+            initAudioContext();
+            if (!audioCtx) return;
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume().then(() => {
+                    if (callback) callback();
+                }).catch(() => {
+                    if (callback) callback();
+                });
+            } else {
+                if (callback) callback();
             }
         }
 
         // Global responsive unlock listeners: primes the AudioContext on first touch/click/scroll
         ['click', 'touchstart', 'touchend', 'pointerdown', 'keydown', 'scroll'].forEach(evt => {
-            window.addEventListener(evt, () => initAudioContext(), { once: true, passive: true });
+            window.addEventListener(evt, () => ensureAudioActive(), { once: true, passive: true });
         });
 
         // Lifecycle: pause audio processing when tab is in background to save device battery
@@ -507,11 +515,8 @@
             }
         });
 
-        // Synchronize UI status across slider, header, and floating widget
+        // Synchronize UI status across slider and floating widget
         function updateSoundUI() {
-            const soundIcon = document.getElementById('soundIcon');
-            const soundStatusText = document.getElementById('soundStatusText');
-            const soundToggleBtn = document.getElementById('soundToggleBtn');
             const floatingIcon = document.getElementById('floatingSoundIcon');
             const floatingText = document.getElementById('floatingSoundText');
             const floatingPulse = document.getElementById('floatingSoundPulse');
@@ -522,31 +527,16 @@
 
             if (currentVolume >= 0.7) {
                 // High Boosted Volume
-                if (soundIcon) soundIcon.className = "fa-solid fa-volume-high animate-pulse";
-                if (soundStatusText) soundStatusText.textContent = `Sound: ${pct}% (Boosted)`;
-                if (soundToggleBtn) {
-                    soundToggleBtn.className = "bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none focus:ring-1 focus:ring-emerald-400";
-                }
                 if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-high text-[#7E83C4]";
                 if (floatingText) floatingText.textContent = `${pct}%`;
                 if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping";
             } else if (currentVolume > 0.05) {
                 // Medium Volume
-                if (soundIcon) soundIcon.className = "fa-solid fa-volume-low";
-                if (soundStatusText) soundStatusText.textContent = `Sound: ${pct}%`;
-                if (soundToggleBtn) {
-                    soundToggleBtn.className = "bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none";
-                }
                 if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-low text-sky-600";
                 if (floatingText) floatingText.textContent = `${pct}%`;
                 if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-sky-500";
             } else {
                 // Muted (0%)
-                if (soundIcon) soundIcon.className = "fa-solid fa-volume-xmark text-slate-400";
-                if (soundStatusText) soundStatusText.textContent = "Sound: Muted";
-                if (soundToggleBtn) {
-                    soundToggleBtn.className = "bg-slate-700/50 hover:bg-slate-700 text-slate-400 border border-slate-600 text-[11px] px-3 py-0.5 rounded-full flex items-center space-x-1.5 transition-all cursor-pointer active:scale-95 focus:outline-none";
-                }
                 if (floatingIcon) floatingIcon.className = "fa-solid fa-volume-xmark text-slate-400";
                 if (floatingText) floatingText.textContent = "Muted";
                 if (floatingPulse) floatingPulse.className = "w-2.5 h-2.5 rounded-full bg-slate-400";
@@ -555,23 +545,24 @@
 
         // Apply volume with smooth gain envelope
         function applyVolume(vol, playConfirmation = false) {
-            initAudioContext();
-            currentVolume = Math.max(0, Math.min(1.0, vol));
-            if (currentVolume > 0) {
-                lastNonZeroVolume = currentVolume;
-            }
-            localStorage.setItem('as_sound_volume', currentVolume);
+            ensureAudioActive(() => {
+                currentVolume = Math.max(0, Math.min(1.0, vol));
+                if (currentVolume > 0) {
+                    lastNonZeroVolume = currentVolume;
+                }
+                localStorage.setItem('as_sound_volume', currentVolume);
 
-            if (masterGainNode && audioCtx) {
-                masterGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
-                masterGainNode.gain.setValueAtTime(masterGainNode.gain.value, audioCtx.currentTime);
-                masterGainNode.gain.linearRampToValueAtTime(currentVolume, audioCtx.currentTime + 0.03);
-            }
-            updateSoundUI();
+                if (masterGainNode && audioCtx) {
+                    masterGainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+                    masterGainNode.gain.setValueAtTime(masterGainNode.gain.value, audioCtx.currentTime);
+                    masterGainNode.gain.linearRampToValueAtTime(currentVolume, audioCtx.currentTime + 0.03);
+                }
+                updateSoundUI();
 
-            if (playConfirmation && currentVolume > 0) {
-                playTone(587.33, 'sine', 0.12, 0.45);
-            }
+                if (playConfirmation && currentVolume > 0) {
+                    playTone(587.33, 'sine', 0.12, 0.55);
+                }
+            });
         }
 
         // Interactive responsive slider handler
@@ -590,77 +581,77 @@
         }
 
         // Boosted Dual-Harmonic Tone Generator (Fundamental Sine + 2nd Harmonic Triangle)
-        function playTone(freq, type = 'sine', duration = 0.16, gainLevel = 0.65) {
+        function playTone(freq, type = 'sine', duration = 0.16, gainLevel = 0.85) {
             if (currentVolume <= 0) return;
-            initAudioContext();
-            if (!audioCtx) return;
-            try {
-                const now = audioCtx.currentTime;
-                const dest = masterGainNode || audioCtx.destination;
+            ensureAudioActive(() => {
+                try {
+                    const now = audioCtx.currentTime;
+                    const dest = masterGainNode || audioCtx.destination;
 
-                // 1. Primary fundamental oscillator
-                const osc1 = audioCtx.createOscillator();
-                const gain1 = audioCtx.createGain();
-                osc1.type = type;
-                osc1.frequency.setValueAtTime(freq, now);
-                gain1.gain.setValueAtTime(gainLevel * 0.75, now);
-                gain1.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-                osc1.connect(gain1);
-                gain1.connect(dest);
-                osc1.start(now);
-                osc1.stop(now + duration);
+                    // 1. Primary fundamental oscillator
+                    const osc1 = audioCtx.createOscillator();
+                    const gain1 = audioCtx.createGain();
+                    osc1.type = type;
+                    osc1.frequency.setValueAtTime(freq, now);
+                    gain1.gain.setValueAtTime(gainLevel * 0.70, now);
+                    gain1.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+                    osc1.connect(gain1);
+                    gain1.connect(dest);
+                    osc1.start(now);
+                    osc1.stop(now + duration);
 
-                // 2. Harmonic overtone (octave higher triangle wave for clarity on phone/laptop speakers)
-                const osc2 = audioCtx.createOscillator();
-                const gain2 = audioCtx.createGain();
-                osc2.type = 'triangle';
-                osc2.frequency.setValueAtTime(freq * 2, now);
-                gain2.gain.setValueAtTime(gainLevel * 0.35, now);
-                gain2.gain.exponentialRampToValueAtTime(0.0001, now + duration * 0.8);
-                osc2.connect(gain2);
-                gain2.connect(dest);
-                osc2.start(now);
-                osc2.stop(now + duration * 0.8);
-            } catch (err) {}
+                    // 2. Harmonic overtone (octave higher triangle wave for clarity on phone/laptop speakers)
+                    const osc2 = audioCtx.createOscillator();
+                    const gain2 = audioCtx.createGain();
+                    osc2.type = 'triangle';
+                    osc2.frequency.setValueAtTime(freq * 2, now);
+                    gain2.gain.setValueAtTime(gainLevel * 0.35, now);
+                    gain2.gain.exponentialRampToValueAtTime(0.0001, now + duration * 0.8);
+                    osc2.connect(gain2);
+                    gain2.connect(dest);
+                    osc2.start(now);
+                    osc2.stop(now + duration * 0.8);
+                } catch (err) {}
+            });
         }
 
         // Boosted Multi-tone Chime (Harmonic chord for CTA / WhatsApp)
-        function playChime(frequencies, noteSpacing = 0.08, gainLevel = 0.55, duration = 0.32) {
+        function playChime(frequencies, noteSpacing = 0.08, gainLevel = 0.70, duration = 0.32) {
             if (currentVolume <= 0) return;
-            initAudioContext();
-            if (!audioCtx) return;
-            try {
-                const now = audioCtx.currentTime;
-                const dest = masterGainNode || audioCtx.destination;
+            ensureAudioActive(() => {
+                try {
+                    const now = audioCtx.currentTime;
+                    const dest = masterGainNode || audioCtx.destination;
 
-                frequencies.forEach((freq, idx) => {
-                    const noteTime = now + (idx * noteSpacing);
-                    
-                    // Fundamental note
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(freq, noteTime);
-                    gain.gain.setValueAtTime(gainLevel * 0.7, noteTime);
-                    gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + duration);
-                    osc.connect(gain);
-                    gain.connect(dest);
-                    osc.start(noteTime);
-                    osc.stop(noteTime + duration);
+                    frequencies.forEach((freq, idx) => {
+                        const noteTime = now + (idx * noteSpacing);
+                        
+                        // Fundamental note
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, noteTime);
+                        gain.gain.setValueAtTime(gainLevel * 0.65, noteTime);
+                        gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + duration);
+                        osc.connect(gain);
+                        gain.connect(dest);
+                        osc.start(noteTime);
+                        osc.stop(noteTime + duration);
 
-                    // Shimmering overtone
-                    const oscOvertone = audioCtx.createOscillator();
-                    const gainOvertone = audioCtx.createGain();
-                    oscOvertone.type = 'triangle';
-                    oscOvertone.frequency.setValueAtTime(freq * 1.5, noteTime);
-                    gainOvertone.gain.setValueAtTime(gainLevel * 0.3, noteTime);
-                    gainOvertone.gain.exponentialRampToValueAtTime(0.0001, noteTime + duration * 0.75);
-                    oscOvertone.connect(gainOvertone);
-                    gainOvertone.connect(dest);
-                    oscOvertone.start(noteTime);
-                    oscOvertone.stop(noteTime + duration * 0.75);
-                });
-            } catch (err) {}
+                        // Shimmering overtone
+                        const oscOvertone = audioCtx.createOscillator();
+                        const gainOvertone = audioCtx.createGain();
+                        oscOvertone.type = 'triangle';
+                        oscOvertone.frequency.setValueAtTime(freq * 1.5, noteTime);
+                        gainOvertone.gain.setValueAtTime(gainLevel * 0.35, noteTime);
+                        gainOvertone.gain.exponentialRampToValueAtTime(0.0001, noteTime + duration * 0.75);
+                        oscOvertone.connect(gainOvertone);
+                        gainOvertone.connect(dest);
+                        oscOvertone.start(noteTime);
+                        oscOvertone.stop(noteTime + duration * 0.75);
+                    });
+                } catch (err) {}
+            });
         }
 
         // Responsive Click / Tap sound
@@ -668,10 +659,10 @@
             if (currentVolume <= 0) return;
             if (variant === 'cta') {
                 // E5 -> A5 -> C6 rich 3-note ascending harmonic chime at maximum punch
-                playChime([659.25, 880, 1046.5], 0.07, 0.55, 0.35);
+                playChime([659.25, 880, 1046.5], 0.07, 0.70, 0.35);
             } else {
                 // Punchy, resonant D5 note with full acoustic body
-                playTone(587.33, 'sine', 0.16, 0.65);
+                playTone(587.33, 'sine', 0.16, 0.85);
             }
         }
 
